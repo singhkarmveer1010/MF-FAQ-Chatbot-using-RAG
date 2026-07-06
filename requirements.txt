@@ -30,6 +30,7 @@ lxml
 # --- Configuration & Environment ---
 python-dotenv
 pydantic>=2.0
+apscheduler>=3.10.0
 
 # --- Testing ---
 pytest

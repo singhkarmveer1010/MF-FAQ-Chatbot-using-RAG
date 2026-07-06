@@ -82,7 +82,17 @@ class IngestionScheduler:
         finally:
             # Update next run time estimation if scheduled
             interval_hours = int(os.getenv("INGESTION_INTERVAL_HOURS", "24"))
-            self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
+            if self._scheduler:
+                try:
+                    job = self._scheduler.get_job(self._job_id)
+                    if job and job.next_run_time:
+                        self.next_run_time = job.next_run_time.isoformat()
+                    else:
+                        self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
+                except Exception:
+                    self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
+            else:
+                self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
 
     def _fallback_loop(self, interval_seconds: int):
         """Fallback background loop if APScheduler is not installed."""
@@ -120,12 +130,13 @@ class IngestionScheduler:
                     day=parts[2],
                     month=parts[3],
                     day_of_week=parts[4],
+                    timezone="UTC",
                 )
             else:
                 from apscheduler.triggers.interval import IntervalTrigger
                 trigger = IntervalTrigger(hours=interval_hours)
                 
-            self._scheduler.add_job(
+            job = self._scheduler.add_job(
                 self._execute_pipeline_task,
                 trigger=trigger,
                 id=self._job_id,
@@ -134,8 +145,11 @@ class IngestionScheduler:
             )
             self._scheduler.start()
             self.is_running = True
-            self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
-            logger.info("✅ [SCHEDULER] APScheduler started successfully in background.")
+            if job and job.next_run_time:
+                self.next_run_time = job.next_run_time.isoformat()
+            else:
+                self.next_run_time = (datetime.now() + timedelta(hours=interval_hours)).isoformat()
+            logger.info(f"✅ [SCHEDULER] APScheduler started successfully in background. Next run at: {self.next_run_time}")
             
         except ImportError:
             logger.info("[SCHEDULER] APScheduler not found in environment. Using standard threading background loop.")

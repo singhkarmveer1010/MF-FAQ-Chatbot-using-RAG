@@ -16,7 +16,6 @@ on:
 jobs:
   scheduled-ingestion:
     name: Run Mutual Fund Data Ingestion
-    runs-format: ubuntu-latest
     runs-on: ubuntu-latest
     
     steps:
@@ -35,7 +34,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: 🚀 Option A — Trigger Live API Endpoint (If configured)
-        if: ${{ env.API_BASE_URL != '' && (github.event.inputs.trigger_api_webhook == 'true' || github.event_name == 'schedule') }}
+        if: ${{ secrets.API_BASE_URL != '' && (github.event.inputs.trigger_api_webhook == 'true' || github.event_name == 'schedule') }}
         env:
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           INGEST_ADMIN_TOKEN: ${{ secrets.INGEST_ADMIN_TOKEN }}
@@ -47,7 +46,7 @@ jobs:
             --fail --silent --show-error || echo "⚠️ API trigger returned non-200 or not configured. Proceeding to local pipeline execution."
 
       - name: ⚙️ Option B — Execute Local Ingestion Pipeline & Update Vector Store
-        if: ${{ env.API_BASE_URL == '' || github.event.inputs.trigger_api_webhook != 'true' }}
+        if: ${{ secrets.API_BASE_URL == '' || (github.event_name != 'schedule' && github.event.inputs.trigger_api_webhook != 'true') }}
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || 'dummy_key_for_offline_embedding_indexing' }}
           EMBEDDING_MODEL: BAAI/bge-small-en-v1.5
