@@ -136,7 +136,14 @@ def test_run_pipeline_skip_scrape(tmp_path, sample_raw_text):
 
     (raw_dir / "1.txt").write_text(sample_raw_text, encoding="utf-8")
 
-    results = run_pipeline(skip_scrape=True, raw_dir=raw_dir, processed_dir=out_dir, urls_json=urls_json)
+    results = run_pipeline(
+        skip_scrape=True,
+        skip_index=True,
+        raw_dir=raw_dir,
+        processed_dir=out_dir,
+        urls_json=urls_json,
+        vectorstore_dir=tmp_path / "vectorstore",
+    )
 
     assert results["total_schemes"] == 1
     assert results["successful_schemes"] == 1

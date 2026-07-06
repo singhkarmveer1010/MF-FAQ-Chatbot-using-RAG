@@ -92,9 +92,12 @@ def call_llm_with_retry(prompt_text: str, model_name: str = LLM_MODEL) -> str:
         logger.error("langchain-groq package is not installed.")
         return "Error: Required LLM library langchain-groq is missing."
 
+    if LLM_TEMPERATURE != 0.0:
+        logger.warning(f"Temperature lock violation: LLM_TEMPERATURE={LLM_TEMPERATURE} (Enforcing 0.0 for deterministic generation).")
+    
     llm = ChatGroq(
         model=model_name,
-        temperature=LLM_TEMPERATURE,
+        temperature=0.0,
         groq_api_key=GROQ_API_KEY,
         max_tokens=300,  # Limit response size for 3 sentences + footer
     )

@@ -30,7 +30,7 @@ logger = logging.getLogger("test_api")
 client = TestClient(app)
 
 
-def run_api_tests():
+def test_run_api_tests():
     print("=== Phase 5 Backend API Automated Verification ===")
     
     # 1. Test GET /api/health
@@ -108,4 +108,4 @@ def run_api_tests():
 
 
 if __name__ == "__main__":
-    run_api_tests()
+    test_run_api_tests()

@@ -524,10 +524,10 @@ User Question: {user_query}
 | `test_refusal_no_advice` | Advisory query | Response does not contain investment advice |
 
 ### Completion Criteria
-- [ ] `pytest tests/` passes with all tests green
-- [ ] Zero false-negative intent classifications on the test set
-- [ ] All formatted responses comply with the 3-sentence + citation + footer rule
-- [ ] Refusal responses always include a Groww educational link
+- [x] `pytest tests/` passes with all tests green
+- [x] Zero false-negative intent classifications on the test set
+- [x] All formatted responses comply with the 3-sentence + citation + footer rule
+- [x] Refusal responses always include a Groww educational link
 
 ---
 
@@ -575,10 +575,10 @@ PII_PATTERNS = {
 | Output Validation | Post-generation format check | 4 |
 
 ### Completion Criteria
-- [ ] PII inputs blocked with message: "Please do not share personal information."
-- [ ] All 8 security controls from §10 are active
-- [ ] End-to-end smoke test passes for all 10 query types
-- [ ] `README.md` is complete with setup instructions and known limitations
+- [x] PII inputs blocked with message: "Please do not share personal information."
+- [x] All 8 security controls from §10 are active
+- [x] End-to-end smoke test passes for all 10 query types
+- [x] `README.md` is complete with setup instructions and known limitations
 
 ---
 
