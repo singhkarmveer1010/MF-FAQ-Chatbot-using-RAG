@@ -38,7 +38,7 @@ LLM_TEMPERATURE: float = float(os.getenv("LLM_TEMPERATURE", "0.0"))
 
 # --- Server Configuration ---
 API_HOST: str = os.getenv("API_HOST", "0.0.0.0")
-API_PORT: int = int(os.getenv("API_PORT", "8000"))
+API_PORT: int = int(os.getenv("PORT", os.getenv("API_PORT", "8000")))
 
 # --- Automated Ingestion Scheduler Configuration (Phase 7 & GitHub Actions) ---
 INGESTION_CRON: str = os.getenv("INGESTION_CRON", "0 5 * * *")  # 05:00 UTC = 10:30 AM IST

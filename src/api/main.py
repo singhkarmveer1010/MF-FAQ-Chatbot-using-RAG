@@ -71,6 +71,7 @@ app.add_middleware(
     allow_origins=["*"],  # Allow all frontend origins during development
     allow_credentials=True,
     allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Include API Router

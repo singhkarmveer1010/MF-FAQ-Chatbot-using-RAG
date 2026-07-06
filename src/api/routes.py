@@ -203,7 +203,7 @@ async def post_query(request: QueryRequest):
 @router.post("/ingest", response_model=IngestResponse, summary="Admin Ingestion Trigger Endpoint (§5.5 & Phase 7)")
 async def post_ingest(background: bool = True, authorization: Optional[str] = Header(None)):
     """Admin-only endpoint to trigger web scraping, cleaning, chunking, and ChromaDB vector indexing under a mutex lock."""
-    if INGEST_ADMIN_TOKEN and INGEST_ADMIN_TOKEN != "your_secure_admin_token_here":
+    if INGEST_ADMIN_TOKEN:
         expected_bearer = f"Bearer {INGEST_ADMIN_TOKEN}"
         if authorization != expected_bearer and authorization != INGEST_ADMIN_TOKEN:
             logger.warning("Unauthorized ingestion trigger attempt blocked.")
