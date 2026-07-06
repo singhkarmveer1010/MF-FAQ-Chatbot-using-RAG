@@ -67,7 +67,7 @@ def run_pipeline(
         logger.info("[Step 1/3] Skipping web scraping step (--skip-scrape enabled). Using existing raw files.")
     else:
         logger.info(f"[Step 1/3] Scraping corpus from {urls_json} into {raw_dir}...")
-        scrape_results = scrape_all_schemes(json_path=urls_json, output_dir=raw_dir)
+        scrape_results = scrape_all_schemes(urls_json=urls_json, output_dir=raw_dir)
         success_scrapes = sum(1 for r in scrape_results if r["status"] == "success")
         logger.info(f"[Step 1/3] Scraping complete. Successfully scraped {success_scrapes}/{len(scrape_results)} schemes.")
 

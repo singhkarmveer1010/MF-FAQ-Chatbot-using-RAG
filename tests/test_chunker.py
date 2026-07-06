@@ -149,3 +149,32 @@ def test_run_pipeline_skip_scrape(tmp_path, sample_raw_text):
     assert results["successful_schemes"] == 1
     assert results["total_chunks_generated"] > 0
     assert (out_dir / "1_chunks.json").exists()
+
+
+@patch("src.ingestion.scraper.scrape_url")
+def test_run_pipeline_with_scrape(mock_scrape, tmp_path, sample_raw_text):
+    """Test Task 2.7: ingest_pipeline runner executing scrape step without keyword argument errors."""
+    mock_scrape.return_value = sample_raw_text
+    raw_dir = tmp_path / "raw"
+    out_dir = tmp_path / "processed"
+
+    corpus = [{"id": 1, "scheme_name": "Test Fund", "category": "Equity", "url": "http://example.com/1"}]
+    urls_json = tmp_path / "urls.json"
+    with open(urls_json, "w", encoding="utf-8-sig") as f:
+        json.dump({"corpus": corpus}, f)
+
+    results = run_pipeline(
+        skip_scrape=False,
+        skip_index=True,
+        raw_dir=raw_dir,
+        processed_dir=out_dir,
+        urls_json=urls_json,
+        vectorstore_dir=tmp_path / "vectorstore",
+    )
+
+    assert results["total_schemes"] == 1
+    assert results["successful_schemes"] == 1
+    assert results["total_chunks_generated"] > 0
+    assert (raw_dir / "1.txt").exists()
+    assert (out_dir / "1_chunks.json").exists()
+
