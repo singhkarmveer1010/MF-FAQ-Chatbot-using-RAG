@@ -1,0 +1,14 @@
+{
+  "corpus": [
+    { "id": 1, "scheme_name": "HDFC Nifty 50 Index Fund", "category": "Equity Index", "url": "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth" },
+    { "id": 2, "scheme_name": "HDFC BSE Sensex Index Fund", "category": "Equity Index", "url": "https://groww.in/mutual-funds/hdfc-bse-sensex-index-fund-direct-growth" },
+    { "id": 3, "scheme_name": "HDFC Childrens Fund", "category": "Goal-Based", "url": "https://groww.in/mutual-funds/hdfc-children's-fund-direct-plan" },
+    { "id": 4, "scheme_name": "HDFC Banking and Financial Services Fund", "category": "Sectoral", "url": "https://groww.in/mutual-funds/hdfc-banking-financial-services-fund-direct-growth" },
+    { "id": 5, "scheme_name": "HDFC Corporate Debt Opportunities Fund", "category": "Debt", "url": "https://groww.in/mutual-funds/hdfc-corporate-debt-opportunities-fund-direct-growth" },
+    { "id": 6, "scheme_name": "HDFC Gold ETF Fund of Fund", "category": "Commodity", "url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth" },
+    { "id": 7, "scheme_name": "HDFC Nifty Next 50 Index Fund", "category": "Equity Index", "url": "https://groww.in/mutual-funds/hdfc-nifty-next-50-index-fund-direct-growth" },
+    { "id": 8, "scheme_name": "HDFC Nifty500 Multicap 50:25:25 Index Fund", "category": "Multicap Index", "url": "https://groww.in/mutual-funds/hdfc-nifty500-multicap-50:25:25-index-fund-direct-growth" },
+    { "id": 9, "scheme_name": "HDFC Diversified Equity All Cap Active FoF", "category": "Fund of Funds", "url": "https://groww.in/mutual-funds/hdfc-diversified-equity-all-cap-active-fof-direct-growth" },
+    { "id": 10, "scheme_name": "HDFC Nifty India Digital Index Fund", "category": "Thematic Index", "url": "https://groww.in/mutual-funds/hdfc-nifty-india-digital-index-fund-direct-growth" }
+  ]
+}

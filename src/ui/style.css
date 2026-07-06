@@ -1,0 +1,134 @@
+/* 
+ * Mutual Fund FAQ Assistant — Frontend Stylesheet (Phase 6.2 & Dark Mode)
+ * Premium Dark Mode palette, Outfit/Inter typography, glassmorphism, and responsive layout utilities.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  --groww-primary: #00E676;
+  --groww-primary-dark: #00C853;
+  --groww-primary-tint: rgba(0, 230, 118, 0.1);
+  --bg-surface: #0a0e17;
+  --bg-chat: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .brand-font {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism Bottom Input Bar */
+.glass-input-bar {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat Message Bubbles */
+.bubble-user {
+  background: linear-gradient(135deg, #00C853 0%, #009970 100%);
+  color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 200, 83, 0.25);
+}
+
+.bubble-assistant {
+  background-color: #1e293b;
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+  color: #f8fafc;
+}
+
+.bubble-refusal {
+  background-color: #1f1a14;
+  border-left: 4px solid #f59e0b;
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  border-right: 1px solid rgba(245, 158, 11, 0.2);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  color: #fef3c7;
+}
+
+.bubble-pii {
+  background-color: #2a1215;
+  border-left: 4px solid #ef4444;
+  border-top: 1px solid rgba(239, 68, 68, 0.2);
+  border-right: 1px solid rgba(239, 68, 68, 0.2);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+  color: #fee2e2;
+}
+
+/* Interactive Bento Citation Cards */
+.bento-card {
+  background-color: #0f172a;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 25px rgba(0, 230, 118, 0.15);
+  border-color: #00E676;
+}
+
+/* Pulse animation for loading states */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 1.8s infinite ease-in-out;
+}
+
+/* Sidebar scheme list item hover effect */
+.scheme-item {
+  transition: all 0.15s ease;
+  color: #cbd5e1;
+}
+
+.scheme-item:hover {
+  background-color: rgba(0, 230, 118, 0.08);
+  color: #00E676;
+  padding-left: 1.25rem;
+}
+
+.scheme-item.active {
+  background-color: rgba(0, 230, 118, 0.15);
+  color: #00E676;
+  font-weight: 600;
+  border-left: 3px solid #00E676;
+}

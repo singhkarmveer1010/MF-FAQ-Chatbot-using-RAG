@@ -1,0 +1,2233 @@
+HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio
+1M
+6M
+1Y
+All
+NAV: 03 Jul '26
+₹10.12
+Min. for SIP
+₹100
+Fund size (AUM)
+₹472.65 Cr
+Expense ratio
+0.33%
+Rating
+--
+Return calculator
+Monthly investment
+₹5,000
+3 months
+₹15,000
+₹15,410
++
+2.73
+%
+6 months
+₹30,000
+₹31,621
++
+5.40
+%
+1 year
+₹60,000
+₹62,246
++
+3.74
+%
+Holdings (
+506
+)
+HDFC Bank Ltd
+Financial
+Equity
+4.25%
+ICICI Bank Ltd
+Financial
+Equity
+3.35%
+Reliance Industries Ltd
+Energy & Utilities
+Equity
+3.33%
+Bharti Airtel Ltd
+Technology
+Equity
+2.09%
+Larsen & Toubro Ltd
+Industrials
+Equity
+1.78%
+Infosys Ltd
+Technology
+Equity
+1.52%
+State Bank of India
+Financial
+Equity
+1.49%
+Axis Bank Ltd
+Financial
+Equity
+1.38%
+BSE Ltd
+Financial
+Equity
+1.06%
+Kotak Mahindra Bank Ltd
+Financial
+Equity
+1.05%
+ITC Ltd
+Consumer Staples
+Equity
+1.03%
+Mahindra & Mahindra Ltd
+Consumer Discretionary
+Equity
+1.01%
+Bajaj Finance Ltd
+Financial
+Equity
+0.91%
+Tata Consultancy Services Ltd
+Technology
+Equity
+0.86%
+Hindustan Unilever Ltd
+Consumer Staples
+Equity
+0.71%
+Sun Pharmaceutical Industries Ltd
+Healthcare
+Equity
+0.71%
+NTPC Ltd
+Energy & Utilities
+Equity
+0.68%
+Zomato Ltd
+Technology
+Equity
+0.67%
+Maruti Suzuki India Ltd
+Consumer Discretionary
+Equity
+0.64%
+Tata Steel Ltd
+Materials
+Equity
+0.64%
+Titan Company Ltd
+Consumer Discretionary
+Equity
+0.63%
+Hindalco Industries Ltd
+Materials
+Equity
+0.61%
+Bharat Electronics Ltd
+Industrials
+Equity
+0.55%
+Ultratech Cement Ltd
+Materials
+Equity
+0.51%
+Adani Ports and Special Economic Zone Ltd
+Industrials
+Equity
+0.50%
+Power Grid Corporation of India Ltd
+Energy & Utilities
+Equity
+0.49%
+Shriram Transport Finance Company Ltd
+Financial
+Equity
+0.49%
+HCL Technologies Ltd
+Technology
+Equity
+0.47%
+Multi Commodity Exchange Of India Ltd
+Financial
+Equity
+0.47%
+Asian Paints Ltd
+Materials
+Equity
+0.45%
+The Federal Bank Ltd
+Financial
+Equity
+0.45%
+JSW Steel Ltd
+Materials
+Equity
+0.45%
+Grasim Industries Ltd
+Materials
+Equity
+0.44%
+Bajaj Auto Ltd
+Consumer Discretionary
+Equity
+0.43%
+Suzlon Energy Ltd
+Industrials
+Equity
+0.43%
+GE T&D India Ltd
+Industrials
+Equity
+0.40%
+Hero Motocorp Ltd
+Consumer Discretionary
+Equity
+0.40%
+Coal India Ltd
+Materials
+Equity
+0.39%
+Adani Power Ltd
+Energy & Utilities
+Equity
+0.38%
+Bajaj Finserv Ltd
+Financial
+Equity
+0.38%
+Bharat Heavy Electricals Ltd
+Industrials
+Equity
+0.38%
+Indusind Bank Ltd
+Financial
+Equity
+0.38%
+Nestle India Ltd
+Consumer Staples
+Equity
+0.38%
+Oil & Natural Gas Corporation Ltd
+Energy & Utilities
+Equity
+0.38%
+Eicher Motors Ltd
+Consumer Discretionary
+Equity
+0.37%
+Interglobe Aviation Ltd
+Industrials
+Equity
+0.37%
+Indus Towers Ltd
+Technology
+Equity
+0.36%
+PB Fintech Ltd
+Financial
+Equity
+0.36%
+Lupin Ltd
+Healthcare
+Equity
+0.35%
+Tech Mahindra Ltd
+Technology
+Equity
+0.35%
+Trent Ltd
+Consumer Discretionary
+Equity
+0.35%
+Persistent Systems Ltd
+Technology
+Equity
+0.35%
+AU Small Finance Bank Ltd
+Financial
+Equity
+0.35%
+Karur Vysya Bank Ltd
+Financial
+Equity
+0.34%
+Sona BLW Precision Forgings Ltd
+Consumer Discretionary
+Equity
+0.34%
+Bharat Forge Ltd
+Consumer Discretionary
+Equity
+0.33%
+Laurus Labs Ltd
+Healthcare
+Equity
+0.33%
+Divi's Laboratories Ltd
+Healthcare
+Equity
+0.32%
+Navin Fluorine International Ltd
+Materials
+Equity
+0.32%
+Adani Enterprises Ltd
+Materials
+Equity
+0.31%
+Apollo Hospitals Enterprise Ltd
+Healthcare
+Equity
+0.31%
+Tata Motors Ltd
+Consumer Discretionary
+Equity
+0.31%
+Repo
+Unspecified
+Repo
+0.31%
+SBI Life Insurance Company Ltd
+Financial
+Equity
+0.31%
+Polycab India Ltd
+Industrials
+Equity
+0.31%
+Hitachi Energy India Ltd
+Industrials
+Equity
+0.31%
+Delhivery Ltd
+Industrials
+Equity
+0.31%
+Cummins India Ltd
+Industrials
+Equity
+0.30%
+Dr. Reddy's Laboratories Ltd
+Healthcare
+Equity
+0.30%
+Fortis Healthcare Ltd
+Healthcare
+Equity
+0.30%
+Hindustan Aeronautics Ltd
+Industrials
+Equity
+0.30%
+Coforge Ltd
+Technology
+Equity
+0.30%
+IDFC First Bank Ltd
+Financial
+Equity
+0.30%
+Dixon Technologies (India) Ltd
+Consumer Discretionary
+Equity
+0.30%
+One 97 Communications Ltd
+Industrials
+Equity
+0.30%
+Tata Motors Ltd
+Industrials
+Equity
+0.30%
+Cipla Ltd
+Healthcare
+Equity
+0.29%
+DEWAN HOUSING FINANCE CORP. LTD. EQ
+Financial
+Equity
+0.29%
+TVS Motor Company Ltd
+Consumer Discretionary
+Equity
+0.29%
+Tata Consumer Products Ltd
+Consumer Staples
+Equity
+0.29%
+Jio Financial Services Limited
+Financial
+Equity
+0.29%
+Ashok Leyland Ltd
+Industrials
+Equity
+0.28%
+Max Financial Services Ltd
+Financial
+Equity
+0.28%
+Marico Ltd
+Consumer Staples
+Equity
+0.27%
+Angel One Ltd
+Financial
+Equity
+0.27%
+Varun Beverages Ltd
+Consumer Staples
+Equity
+0.27%
+Central Depository Services (India) Ltd
+Financial
+Equity
+0.27%
+ICICI Lombard General Insurance Company Ltd
+Financial
+Equity
+0.27%
+Max Healthcare Institute Ltd
+Healthcare
+Equity
+0.27%
+Tata Power Company Ltd
+Energy & Utilities
+Equity
+0.26%
+Yes Bank Ltd
+Financial
+Equity
+0.26%
+RBL Bank Ltd
+Financial
+Equity
+0.26%
+Aurobindo Pharma Ltd
+Healthcare
+Equity
+0.25%
+Cholamandalam Investment & Finance Company Ltd
+Financial
+Equity
+0.25%
+SRF Ltd
+Materials
+Equity
+0.25%
+Hindustan Petroleum Corporation Ltd
+Energy & Utilities
+Equity
+0.24%
+Vodafone Idea Ltd
+Technology
+Equity
+0.24%
+Info Edge (India) Ltd
+Technology
+Equity
+0.24%
+Samvardhana Motherson International Ltd
+Consumer Discretionary
+Equity
+0.24%
+National Aluminium Company Ltd
+Materials
+Equity
+0.24%
+PNB Housing Finance Ltd
+Financial
+Equity
+0.24%
+HDFC Life Insurance Co Ltd
+Financial
+Equity
+0.24%
+Bharat Petroleum Corporation Ltd
+Energy & Utilities
+Equity
+0.23%
+Britannia Industries Ltd
+Consumer Staples
+Equity
+0.23%
+City Union Bank Ltd
+Financial
+Equity
+0.23%
+CG Power & Industrial Solutions Ltd
+Industrials
+Equity
+0.23%
+GMR Airports Infrastructure Ltd
+Industrials
+Equity
+0.23%
+HFCL Ltd
+Technology
+Equity
+0.23%
+Power Finance Corporation Ltd
+Financial
+Equity
+0.23%
+UPL Ltd
+Materials
+Equity
+0.23%
+Aster DM Healthcare Ltd
+Healthcare
+Equity
+0.23%
+Bandhan Bank Ltd
+Financial
+Equity
+0.23%
+Krishna Institute Of Medical Sciences Ltd
+Healthcare
+Equity
+0.23%
+Computer Age Management Services Ltd
+Financial
+Equity
+0.23%
+FSN E-Commerce Ventures Ltd
+Consumer Discretionary
+Equity
+0.23%
+Ather Energy Ltd.
+Consumer Discretionary
+Equity
+0.23%
+Glenmark Pharmaceuticals Ltd
+Healthcare
+Equity
+0.22%
+Hindustan Copper Ltd
+Materials
+Equity
+0.22%
+JB Chemicals & Pharmaceuticals Ltd
+Healthcare
+Equity
+0.22%
+Manappuram Finance Ltd
+Financial
+Equity
+0.22%
+Vedanta Ltd
+Materials
+Equity
+0.22%
+Welspun Corp Ltd
+Materials
+Equity
+0.22%
+Wipro Ltd
+Technology
+Equity
+0.22%
+Avenue Supermarts Ltd
+Consumer Staples
+Equity
+0.22%
+Crompton Greaves Consumer Electricals Ltd
+Consumer Discretionary
+Equity
+0.22%
+Gland Pharma Ltd
+Healthcare
+Equity
+0.22%
+Swiggy Ltd.
+Technology
+Equity
+0.22%
+APL Apollo Tubes Ltd
+Industrials
+Equity
+0.21%
+The Indian Hotels Company Ltd
+Consumer Discretionary
+Equity
+0.21%
+Phoenix Mills Ltd
+Real Estate
+Equity
+0.21%
+Wockhardt Ltd
+Healthcare
+Equity
+0.21%
+Tube Investments Of India Ltd
+Consumer Discretionary
+Equity
+0.21%
+Indian Oil Corporation Ltd
+Energy & Utilities
+Equity
+0.20%
+Kei Industries Ltd
+Industrials
+Equity
+0.20%
+JSW Energy Ltd
+Energy & Utilities
+Equity
+0.20%
+Kirloskar Oil Engines Ltd
+Industrials
+Equity
+0.20%
+Alkem Laboratories Ltd
+Healthcare
+Equity
+0.20%
+Adani Transmission Ltd
+Energy & Utilities
+Equity
+0.20%
+Amber Enterprises India Ltd
+Consumer Discretionary
+Equity
+0.20%
+HDFC Asset Management Company Ltd
+Financial
+Equity
+0.20%
+Ami Organics Ltd
+Healthcare
+Equity
+0.20%
+Sai Life Sciences Ltd.
+Healthcare
+Equity
+0.20%
+Vedanta Aluminium Metal Ltd
+Materials
+Equity
+0.20%
+Bank Of Baroda
+Financial
+Equity
+0.19%
+Biocon Ltd
+Healthcare
+Equity
+0.19%
+Havells India Ltd
+Consumer Discretionary
+Equity
+0.19%
+Mphasis Ltd
+Technology
+Equity
+0.19%
+NMDC Ltd
+Materials
+Equity
+0.19%
+Steel Authority Of India Ltd
+Materials
+Equity
+0.19%
+Cholamandalam Financial Holdings Ltd
+Financial
+Equity
+0.19%
+Aditya Birla Capital Ltd
+Financial
+Equity
+0.19%
+Waaree Energies Ltd.
+Energy & Utilities
+Equity
+0.19%
+Himadri Speciality Chemical Ltd
+Materials
+Equity
+0.18%
+Indian Bank
+Financial
+Equity
+0.18%
+Kalpataru Power Transmission Ltd
+Industrials
+Equity
+0.18%
+Neuland Laboratories Ltd
+Healthcare
+Equity
+0.18%
+Sundaram Finance Ltd
+Financial
+Equity
+0.18%
+Voltas Ltd
+Industrials
+Equity
+0.18%
+Adani Green Energy Ltd
+Energy & Utilities
+Equity
+0.18%
+IIFL Wealth Management Ltd
+Financial
+Equity
+0.18%
+Anand Rathi Wealth Ltd
+Financial
+Equity
+0.18%
+Bajaj Holdings & Investment Ltd
+Financial
+Equity
+0.17%
+Colgate-Palmolive (India) Ltd
+Consumer Staples
+Equity
+0.17%
+GAIL (India) Ltd
+Energy & Utilities
+Equity
+0.17%
+The Great Eastern Shipping Company Ltd
+Energy & Utilities
+Equity
+0.17%
+Jindal Steel & Power Ltd
+Materials
+Equity
+0.17%
+Poonawalla Fincorp Ltd
+Financial
+Equity
+0.17%
+Pidilite Industries Ltd
+Materials
+Equity
+0.17%
+Radico Khaitan Ltd
+Consumer Staples
+Equity
+0.17%
+Solar Industries India Ltd
+Materials
+Equity
+0.17%
+Torrent Pharmaceuticals Ltd
+Healthcare
+Equity
+0.17%
+Torrent Power Ltd
+Energy & Utilities
+Equity
+0.17%
+Indiabulls Housing Finance Ltd
+Financial
+Equity
+0.17%
+Mankind Pharma Ltd.
+Healthcare
+Equity
+0.17%
+Canara Bank
+Financial
+Equity
+0.16%
+Dabur India Ltd
+Consumer Staples
+Equity
+0.16%
+Godrej Properties Ltd
+Real Estate
+Equity
+0.16%
+MRF Ltd
+Consumer Discretionary
+Equity
+0.16%
+NHPC Ltd
+Energy & Utilities
+Equity
+0.16%
+Redington Ltd
+Technology
+Equity
+0.16%
+REC Ltd
+Financial
+Equity
+0.16%
+Timken India Ltd
+Industrials
+Equity
+0.16%
+Oil India Ltd
+Energy & Utilities
+Equity
+0.16%
+Narayana Hrudayalaya Ltd
+Healthcare
+Equity
+0.16%
+Vishal Mega Mart Ltd.
+Consumer Staples
+Equity
+0.16%
+Carborundum Universal Ltd
+Materials
+Equity
+0.15%
+Elgi Equipments Ltd
+Industrials
+Equity
+0.15%
+Godrej Consumer Products Ltd
+Consumer Staples
+Equity
+0.15%
+Oracle Financial Services Software Ltd
+Technology
+Equity
+0.15%
+Page Industries Ltd
+Consumer Discretionary
+Equity
+0.15%
+Tata Chemicals Ltd
+Materials
+Equity
+0.15%
+Prestige Estates Projects Ltd
+Real Estate
+Equity
+0.15%
+L&T Finance Holdings Ltd
+Financial
+Equity
+0.15%
+Dr. Lal Pathlabs Ltd
+Healthcare
+Equity
+0.15%
+Nuvama Wealth Management Ltd
+Financial
+Equity
+0.15%
+Data Patterns (India) Ltd
+Industrials
+Equity
+0.15%
+Star Health & Allied Insurance Co. Ltd
+Financial
+Equity
+0.15%
+Tata Technologies Ltd
+Technology
+Equity
+0.15%
+ABB India Ltd
+Industrials
+Equity
+0.14%
+Apar Industries Ltd
+Diversified
+Equity
+0.14%
+CESC Ltd
+Energy & Utilities
+Equity
+0.14%
+Deepak Nitrite Ltd
+Materials
+Equity
+0.14%
+DLF Ltd
+Real Estate
+Equity
+0.14%
+Granules India Ltd
+Healthcare
+Equity
+0.14%
+Indraprastha Gas Ltd
+Energy & Utilities
+Equity
+0.14%
+Jindal Stainless Ltd
+Materials
+Equity
+0.14%
+JK Cement Ltd
+Materials
+Equity
+0.14%
+Lloyds Metals and Energy Ltd
+Materials
+Equity
+0.14%
+The Ramco Cements Ltd
+Materials
+Equity
+0.14%
+PI Industries Ltd
+Materials
+Equity
+0.14%
+Punjab National Bank
+Financial
+Equity
+0.14%
+Supreme Industries Ltd
+Materials
+Equity
+0.14%
+Tata Communications Ltd
+Technology
+Equity
+0.14%
+United Spirits Ltd
+Consumer Staples
+Equity
+0.14%
+ZF Commercial Vehicle Control Systems India Ltd
+Consumer Discretionary
+Equity
+0.14%
+LTIMindtree Ltd
+Technology
+Equity
+0.14%
+Craftsman Automation Ltd
+Consumer Discretionary
+Equity
+0.14%
+KFin Technologies Ltd
+Financial
+Equity
+0.14%
+Amara Raja Batteries Ltd
+Consumer Discretionary
+Equity
+0.13%
+Asahi India Glass Ltd
+Consumer Discretionary
+Equity
+0.13%
+Atul Ltd
+Materials
+Equity
+0.13%
+Blue Star Ltd
+Industrials
+Equity
+0.13%
+Coromandel International Ltd
+Materials
+Equity
+0.13%
+IIFL Finance Ltd
+Financial
+Equity
+0.13%
+Ipca Laboratories Ltd
+Healthcare
+Equity
+0.13%
+Jaiprakash Power Ventures Ltd
+Energy & Utilities
+Equity
+0.13%
+Mahindra & Mahindra Financial Services Ltd
+Financial
+Equity
+0.13%
+UNO Minda Ltd
+Consumer Discretionary
+Equity
+0.13%
+Muthoot Finance Ltd
+Financial
+Equity
+0.13%
+Petronet LNG Ltd
+Energy & Utilities
+Equity
+0.13%
+Shree Cement Ltd
+Materials
+Equity
+0.13%
+Siemens Ltd
+Diversified
+Equity
+0.13%
+Oberoi Realty Ltd
+Real Estate
+Equity
+0.13%
+NBCC India Ltd
+Industrials
+Equity
+0.13%
+Indian Energy Exchange Ltd
+Financial
+Equity
+0.13%
+Adani Total Gas Ltd
+Energy & Utilities
+Equity
+0.13%
+Piramal Pharma Ltd
+Healthcare
+Equity
+0.13%
+Siemens Energy India Ltd
+Energy & Utilities
+Equity
+0.13%
+Aarti Industries Ltd
+Materials
+Equity
+0.12%
+Aegis Logistics Ltd
+Energy & Utilities
+Equity
+0.12%
+Astral Ltd
+Industrials
+Equity
+0.12%
+Bosch Ltd
+Consumer Discretionary
+Equity
+0.12%
+Deepak Fertilisers & Petrochemicals Corporation Ltd
+Materials
+Equity
+0.12%
+Force Motors Ltd
+Industrials
+Equity
+0.12%
+PTC Industries Ltd
+Materials
+Equity
+0.12%
+Thermax Ltd
+Industrials
+Equity
+0.12%
+Union Bank of India
+Financial
+Equity
+0.12%
+ICICI Prudential Life Insurance Company Ltd
+Financial
+Equity
+0.12%
+Nippon Life India Asset Management Ltd
+Financial
+Equity
+0.12%
+SBI Cards & Payments Services Ltd
+Financial
+Equity
+0.12%
+Home First Finance Company India Ltd
+Financial
+Equity
+0.12%
+Motherson Sumi Wiring India Ltd
+Industrials
+Equity
+0.12%
+Kaynes Technology India Ltd
+Industrials
+Equity
+0.12%
+Sagility India Ltd.
+Industrials
+Equity
+0.12%
+Onesource Specialty Pharma Ltd
+Healthcare
+Equity
+0.12%
+AIA Engineering Ltd
+Industrials
+Equity
+0.11%
+Balkrishna Industries Ltd
+Consumer Discretionary
+Equity
+0.11%
+Bank of India
+Financial
+Equity
+0.11%
+Brigade Enterprises Ltd
+Real Estate
+Equity
+0.11%
+Castrol India Ltd
+Materials
+Equity
+0.11%
+Exide Industries Ltd
+Consumer Discretionary
+Equity
+0.11%
+Finolex Cables Ltd
+Industrials
+Equity
+0.11%
+HBL Power Systems Ltd
+Industrials
+Equity
+0.11%
+Kajaria Ceramics Ltd
+Industrials
+Equity
+0.11%
+Natco Pharma Ltd
+Healthcare
+Equity
+0.11%
+Usha Martin Ltd
+Materials
+Equity
+0.11%
+Zee Entertainment Enterprises Ltd
+Consumer Discretionary
+Equity
+0.11%
+Jubilant FoodWorks Ltd
+Consumer Discretionary
+Equity
+0.11%
+Triveni Turbine Ltd
+Industrials
+Equity
+0.11%
+Inox Wind Ltd
+Industrials
+Equity
+0.11%
+ITC Hotels Ltd
+Consumer Discretionary
+Equity
+0.11%
+Aptus Value Housing Finance India Ltd
+Financial
+Equity
+0.11%
+Five-Star Business Finance Ltd
+Financial
+Equity
+0.11%
+Affle (India) Ltd
+Industrials
+Equity
+0.11%
+Life Insurance Corporation of India
+Financial
+Equity
+0.11%
+Ambuja Cements Ltd
+Materials
+Equity
+0.10%
+Anant Raj Ltd
+Real Estate
+Equity
+0.10%
+Linde India Ltd
+Materials
+Equity
+0.10%
+Bank of Maharashtra
+Financial
+Equity
+0.10%
+Zydus Lifesciences Ltd
+Healthcare
+Equity
+0.10%
+Container Corporation Of India Ltd
+Industrials
+Equity
+0.10%
+EID-Parry (India) Ltd
+Materials
+Equity
+0.10%
+Emami Ltd
+Consumer Staples
+Equity
+0.10%
+Schaeffler India Ltd
+Industrials
+Equity
+0.10%
+Firstsource Solutions Ltd
+Industrials
+Equity
+0.10%
+Hindustan Zinc Ltd
+Materials
+Equity
+0.10%
+IRB Infrastructure Developers Ltd
+Industrials
+Equity
+0.10%
+Jubilant Pharmova Ltd
+Healthcare
+Equity
+0.10%
+LIC Housing Finance Ltd
+Financial
+Equity
+0.10%
+Nava Ltd
+Diversified
+Equity
+0.10%
+Reliance Power Ltd
+Energy & Utilities
+Equity
+0.10%
+Patanjali Foods Ltd
+Consumer Staples
+Equity
+0.10%
+PG Electroplast Ltd
+Industrials
+Equity
+0.10%
+Syngene International Ltd
+Healthcare
+Equity
+0.10%
+Garden Reach Shipbuilders & Engineers Ltd
+Industrials
+Equity
+0.10%
+Gujarat Fluorochemicals Ltd
+Materials
+Equity
+0.10%
+Indian Railway Catering & Tourism Corporation Ltd
+Industrials
+Equity
+0.10%
+Macrotech Developers Ltd
+Real Estate
+Equity
+0.10%
+Aditya Birla Sun Life AMC Ltd
+Financial
+Equity
+0.10%
+Syrma SGS Technology Ltd
+Technology
+Equity
+0.10%
+Netweb Technologies India Ltd.
+Technology
+Equity
+0.10%
+Ola Electric Mobility Ltd.
+Consumer Discretionary
+Equity
+0.10%
+Hyundai Motor India Ltd.
+Consumer Discretionary
+Equity
+0.10%
+Inventurus Knowledge Solutions Ltd.
+Industrials
+Equity
+0.10%
+Lenskart Solutions Ltd.
+Consumer Discretionary
+Equity
+0.10%
+Abbott India Ltd
+Healthcare
+Equity
+0.09%
+Berger Paints India Ltd
+Materials
+Equity
+0.09%
+CCL Products (India) Ltd
+Consumer Staples
+Equity
+0.09%
+Can Fin Homes Ltd
+Financial
+Equity
+0.09%
+Chambal Fertilisers & Chemicals Ltd
+Materials
+Equity
+0.09%
+Gabriel India Ltd
+Consumer Discretionary
+Equity
+0.09%
+Godawari Power & Ispat Ltd
+Materials
+Equity
+0.09%
+Cyient Ltd
+Technology
+Equity
+0.09%
+Capri Global Capital Ltd
+Financial
+Equity
+0.09%
+Motilal Oswal Financial Services Ltd
+Financial
+Equity
+0.09%
+Pfizer Ltd
+Healthcare
+Equity
+0.09%
+Tata Elxsi Ltd
+Technology
+Equity
+0.09%
+Zen Technologies Ltd
+Technology
+Equity
+0.09%
+CreditAccess Grameen Ltd
+Financial
+Equity
+0.09%
+Schneider Electric Infrastructure Ltd
+Energy & Utilities
+Equity
+0.09%
+Eris Lifesciences Ltd
+Healthcare
+Equity
+0.09%
+Dalmia Bharat Ltd
+Materials
+Equity
+0.09%
+Rail Vikas Nigam Ltd
+Industrials
+Equity
+0.09%
+Suven Pharmaceuticals Ltd
+Healthcare
+Equity
+0.09%
+Kalyan Jewellers India Ltd
+Consumer Discretionary
+Equity
+0.09%
+CarTrade Tech Ltd
+Consumer Discretionary
+Equity
+0.09%
+Go Digit General Insurance Ltd.
+Financial
+Equity
+0.09%
+Ajanta Pharma Ltd
+Healthcare
+Equity
+0.08%
+Apollo Tyres Ltd
+Consumer Discretionary
+Equity
+0.08%
+BEML Ltd
+Industrials
+Equity
+0.08%
+Ceat Ltd
+Consumer Discretionary
+Equity
+0.08%
+Century Textiles & Industries Ltd
+Materials
+Equity
+0.08%
+eClerx Services Ltd
+Technology
+Equity
+0.08%
+Engineers India Ltd
+Industrials
+Equity
+0.08%
+Gillette India Ltd
+Consumer Staples
+Equity
+0.08%
+The Jammu & Kashmir Bank Ltd
+Financial
+Equity
+0.08%
+KEC International Ltd
+Diversified
+Equity
+0.08%
+NCC Ltd
+Industrials
+Equity
+0.08%
+PVR Ltd
+Consumer Discretionary
+Equity
+0.08%
+Sobha Ltd
+Real Estate
+Equity
+0.08%
+Titagarh Wagons Ltd
+Industrials
+Equity
+0.08%
+Whirlpool Of India Ltd
+Consumer Discretionary
+Equity
+0.08%
+HDB FINANCIAL SERVICES LIMITED EQ
+Financial
+Equity
+0.08%
+Intellect Design Arena Ltd
+Technology
+Equity
+0.08%
+Authum Investment & Infrastructure Ltd
+Financial
+Equity
+0.08%
+Mahanagar Gas Ltd
+Energy & Utilities
+Equity
+0.08%
+Cochin Shipyard Ltd
+Industrials
+Equity
+0.08%
+KPIT Technologies Ltd
+Technology
+Equity
+0.08%
+Indiamart Intermesh Ltd
+Industrials
+Equity
+0.08%
+Sumitomo Chemical India Ltd
+Materials
+Equity
+0.08%
+Shyam Metalics and Energy Ltd,
+Materials
+Equity
+0.08%
+Vijaya Diagnostic Centre Ltd
+Healthcare
+Equity
+0.08%
+LG Electronics India Ltd.
+Consumer Discretionary
+Equity
+0.08%
+Rainbow Childrens Medicare Ltd
+Healthcare
+Equity
+0.08%
+R R Kabel Ltd.
+Industrials
+Equity
+0.08%
+Premier Energies Ltd.
+Energy & Utilities
+Equity
+0.08%
+Belrise Industries Ltd.
+Consumer Discretionary
+Equity
+0.08%
+ICICI Prudential Asset Management Company Ltd.
+Financial
+Equity
+0.08%
+Balrampur Chini Mills Ltd
+Consumer Staples
+Equity
+0.07%
+Bayer CropScience Ltd
+Materials
+Equity
+0.07%
+Chalet Hotels Ltd
+Consumer Discretionary
+Equity
+0.07%
+Choice International Ltd
+Financial
+Equity
+0.07%
+EIH Ltd
+Consumer Discretionary
+Equity
+0.07%
+Fertilisers & Chemicals Travancore Ltd
+Materials
+Equity
+0.07%
+Gujarat Mineral Development  Corporation Ltd
+Materials
+Equity
+0.07%
+Akzo Nobel India Ltd
+Materials
+Equity
+0.07%
+ITD Cementation India Ltd
+Industrials
+Equity
+0.07%
+Jindal Saw Ltd
+Materials
+Equity
+0.07%
+Birlasoft Ltd
+Technology
+Equity
+0.07%
+KPR Mills Ltd
+Consumer Discretionary
+Equity
+0.07%
+LT Foods Ltd
+Consumer Staples
+Equity
+0.07%
+Mahindra CIE Automotive Ltd
+Consumer Discretionary
+Equity
+0.07%
+NLC India Ltd
+Energy & Utilities
+Equity
+0.07%
+Ramkrishna Forgings Ltd
+Materials
+Equity
+0.07%
+Vardhman Textiles Ltd
+Consumer Discretionary
+Equity
+0.07%
+Zensar Technologies Ltd
+Technology
+Equity
+0.07%
+Indian Renewable Energy Development Agency Ltd
+Energy & Utilities
+Equity
+0.07%
+Aavas Financiers Ltd
+Financial
+Equity
+0.07%
+General Insurance Corporation of India Ltd
+Financial
+Equity
+0.07%
+Indian Railway Finance Corporation Ltd
+Financial
+Equity
+0.07%
+Bharat Dynamics Ltd
+Industrials
+Equity
+0.07%
+Lemon Tree Hotels Ltd
+Consumer Discretionary
+Equity
+0.07%
+Bharti Hexacom Ltd.
+Technology
+Equity
+0.07%
+Techno Electric & Engineering Company Ltd
+Industrials
+Equity
+0.07%
+Mazagon Dock Shipbuilders Ltd
+Industrials
+Equity
+0.07%
+Jubilant Ingrevia Ltd
+Materials
+Equity
+0.07%
+Adani Wilmar Ltd
+Consumer Staples
+Equity
+0.07%
+Paradeep Phosphates Ltd
+Materials
+Equity
+0.07%
+Honasa Consumer Ltd.
+Consumer Staples
+Equity
+0.07%
+Indegene Ltd.
+Healthcare
+Equity
+0.07%
+Emcure Pharmaceuticals Ltd.
+Healthcare
+Equity
+0.07%
+Aditya Birla Lifestyle Brands Ltd
+Consumer Discretionary
+Equity
+0.07%
+Aditya Infotech Ltd.
+Technology
+Equity
+0.07%
+Billionbrains Garage Ventures Ltd.
+Financial
+Equity
+0.07%
+3M India Ltd
+Diversified
+Equity
+0.06%
+AFCONS INFRASTRUCTURE LIMITED EQ
+Industrials
+Equity
+0.06%
+Chennai Petroleum Corporation Ltd
+Energy & Utilities
+Equity
+0.06%
+Crisil Ltd
+Industrials
+Equity
+0.06%
+DHFL VYSYA HOUSING FINANCE LIMITED EQ
+Financial
+Equity
+0.06%
+Elecon Engineering Company Ltd
+Industrials
+Equity
+0.06%
+Escorts Kubota Ltd
+Industrials
+Equity
+0.06%
+Glaxosmithkline Pharmaceuticals Ltd
+Healthcare
+Equity
+0.06%
+Godfrey Phillips India Ltd
+Consumer Staples
+Equity
+0.06%
+Olectra Greentech Ltd
+Industrials
+Equity
+0.06%
+Graphite India Ltd
+Industrials
+Equity
+0.06%
+HEG Ltd
+Industrials
+Equity
+0.06%
+IFCI Ltd
+Financial
+Equity
+0.06%
+Indian Overseas Bank
+Financial
+Equity
+0.06%
+JM Financial Ltd
+Financial
+Equity
+0.06%
+JK Tyre & Industries Ltd
+Consumer Discretionary
+Equity
+0.06%
+PCBL Ltd
+Materials
+Equity
+0.06%
+Poly Medicure Ltd
+Healthcare
+Equity
+0.06%
+Sarda Energy & Minerals Ltd
+Materials
+Equity
+0.06%
+Shipping Corporation Of India Ltd
+Industrials
+Equity
+0.06%
+Sonata Software Ltd
+Technology
+Equity
+0.06%
+Sun TV Network Ltd
+Consumer Discretionary
+Equity
+0.06%
+Swan Energy Ltd
+Consumer Discretionary
+Equity
+0.06%
+Tata Investment Corporation Ltd
+Financial
+Equity
+0.06%
+United Breweries Ltd
+Consumer Staples
+Equity
+0.06%
+Zydus Wellness Ltd
+Consumer Staples
+Equity
+0.06%
+Gravita India Ltd
+Industrials
+Equity
+0.06%
+Minda Corporation Ltd
+Consumer Discretionary
+Equity
+0.06%
+Endurance Technologies Ltd
+Consumer Discretionary
+Equity
+0.06%
+L&T Technology Services Ltd
+Technology
+Equity
+0.06%
+Housing & Urban Development Corporation Ltd
+Financial
+Equity
+0.06%
+Devyani International Ltd
+Consumer Discretionary
+Equity
+0.06%
+Global Health Ltd
+Healthcare
+Equity
+0.06%
+NMDC Steel Ltd.
+Materials
+Equity
+0.06%
+JSW Infrastructure Ltd
+Industrials
+Equity
+0.06%
+Jyoti CNC Automation Ltd.
+Industrials
+Equity
+0.06%
+Brainbees Solutions Ltd.
+Consumer Discretionary
+Equity
+0.06%
+Bajaj Housing Finance Ltd.
+Financial
+Equity
+0.06%
+Niva Bupa Health Insurance Company Ltd.
+Financial
+Equity
+0.06%
+NTPC Green Energy Ltd.
+Energy & Utilities
+Equity
+0.06%
+Physicswallah Ltd.
+Consumer Staples
+Equity
+0.06%
+Tenneco Clean Air India Ltd.
+Consumer Discretionary
+Equity
+0.06%
+Meesho Ltd.
+Consumer Discretionary
+Equity
+0.06%
+ACC Ltd
+Materials
+Equity
+0.05%
+Bata India Ltd
+Consumer Discretionary
+Equity
+0.05%
+Caplin Point Laboratories Ltd
+Healthcare
+Equity
+0.05%
+DCM Shriram Ltd
+Materials
+Equity
+0.05%
+HEXAWARE TECHNOLOGIES LIMITED EQ NEW FV RS.2/-
+Technology
+Equity
+0.05%
+Honeywell Automation India Ltd
+Technology
+Equity
+0.05%
+IDBI Bank Ltd
+Financial
+Equity
+0.05%
+Supreme Petrochem Ltd
+Materials
+Equity
+0.05%
+TATA CAPITAL LIMITED EQ
+Financial
+Equity
+0.05%
+Welspun India Ltd
+Consumer Discretionary
+Equity
+0.05%
+Jupiter Wagons Ltd
+Industrials
+Equity
+0.05%
+Tejas Networks Ltd
+Technology
+Equity
+0.05%
+Ircon International Ltd
+Industrials
+Equity
+0.05%
+UTI Asset Management Company Ltd
+Financial
+Equity
+0.05%
+Clean Science And Technology Ltd
+Materials
+Equity
+0.05%
+Sapphire Foods India Ltd
+Consumer Discretionary
+Equity
+0.05%
+Bikaji Foods International Ltd
+Consumer Staples
+Equity
+0.05%
+SBFC Finance Ltd
+Financial
+Equity
+0.05%
+DOMS Industries Ltd.
+Industrials
+Equity
+0.05%
+TBO Tek Ltd.
+Consumer Discretionary
+Equity
+0.05%
+International Gemmological Institute (India) Ltd.
+Consumer Discretionary
+Equity
+0.05%
+Urban Company Ltd.
+Consumer Staples
+Equity
+0.05%
+Trident Ltd
+Consumer Discretionary
+Equity
+0.04%
+Action Construction Equipment Ltd
+Industrials
+Equity
+0.04%
+Central Bank of India
+Financial
+Equity
+0.04%
+ITI Ltd
+Technology
+Equity
+0.04%
+NUVOCO Vistas Corp Ltd
+Materials
+Equity
+0.04%
+Saregama India Ltd
+Consumer Discretionary
+Equity
+0.04%
+Transformers & Rectifiers India Ltd
+Industrials
+Equity
+0.04%
+UCO Bank
+Financial
+Equity
+0.04%
+Aditya Birla Fashion and Retail Ltd
+Consumer Discretionary
+Equity
+0.04%
+BLS International Services Ltd
+Technology
+Equity
+0.04%
+Anupam Rasayan India Ltd
+Materials
+Equity
+0.04%
+Tega Industries Ltd
+Industrials
+Equity
+0.04%
+Concord Biotech Ltd.
+Healthcare
+Equity
+0.04%
+Signatureglobal (India) Ltd.
+Industrials
+Equity
+0.04%
+Allied Blenders And Distillers Ltd.
+Consumer Staples
+Equity
+0.04%
+ACME Solar Holdings Ltd.
+Energy & Utilities
+Equity
+0.04%
+Schloss Bangalore Ltd.
+Consumer Discretionary
+Equity
+0.04%
+JSW Cement Ltd.
+Materials
+Equity
+0.04%
+Emmvee Photovoltaic Power Ltd.
+Energy & Utilities
+Equity
+0.04%
+Vedanta Power Ltd
+Industrials
+Equity
+0.04%
+Blue Dart Express Ltd
+Industrials
+Equity
+0.03%
+Bombay Burmah Trading Corporation Ltd
+Consumer Staples
+Equity
+0.03%
+Godrej Industries Ltd
+Diversified
+Equity
+0.03%
+The India Cements Ltd
+Materials
+Equity
+0.03%
+JBM Auto Ltd
+Consumer Discretionary
+Equity
+0.03%
+Mangalore Refinery & Petrochemicals Ltd
+Energy & Utilities
+Equity
+0.03%
+Tata Teleservices (Maharashtra) Ltd
+Technology
+Equity
+0.03%
+SJVN Ltd
+Energy & Utilities
+Equity
+0.03%
+RHI Magnesita India Ltd
+Materials
+Equity
+0.03%
+Newgen Software Technologies Ltd
+Technology
+Equity
+0.03%
+Rites Ltd
+Industrials
+Equity
+0.03%
+RailTel Corporation India Ltd
+Technology
+Equity
+0.03%
+LatentView Analytics Ltd
+Technology
+Equity
+0.03%
+Aegis Vopak Terminals Ltd.
+Energy & Utilities
+Equity
+0.03%
+Travel Food Services Ltd.
+Consumer Discretionary
+Equity
+0.03%
+Anthem Biosciences Ltd.
+Healthcare
+Equity
+0.03%
+Canara HSBC Life Insurance Company Ltd.
+Financial
+Equity
+0.03%
+Pine Labs Ltd.
+Technology
+Equity
+0.03%
+Gallantt Metal Ltd
+Materials
+Equity
+0.02%
+Vedanta Oil and Gas Ltd
+Energy & Utilities
+Equity
+0.02%
+The New India Assurance Co. Ltd
+Financial
+Equity
+0.02%
+C.E. Info Systems Ltd
+Technology
+Equity
+0.02%
+Blue Jet Healthcare Ltd.
+Healthcare
+Equity
+0.02%
+Jain Resource Recycling Ltd.
+Materials
+Equity
+0.02%
+Vedanta Iron And Steel Ltd
+Materials
+Equity
+0.02%
+MMTC Ltd
+Diversified
+Equity
+0.01%
+Net Payables
+Unspecified
+Net Payables
+-0.14%
+See All
+Min. for 1st investment
+₹100
+Min. for 2nd investment
+₹100
+Min. for SIP
+₹100
+Returns and rankings
+Annualised returns
+Absolute returns
+Fund returns
++10.2%
+-0.6%
++0.9%
++0.3%
+Category average (
+Equity Multi Cap
+)
+--
+--
++0.9%
+--
+Rank (
+Equity Multi Cap
+)
+26
+29
+30
+--
+Exit load, stamp duty and tax
+Exit load
+Nil
+Stamp duty on investment:
+0.005% (from July 1st, 2020)
+from July 1st 2020
+Tax implication
+If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.
+Check past data
+Compare similar funds
+HSBC Multi Cap Fund Direct Growth
++6.65%
++21.50%
+5,620.77
+Kotak Multicap Fund Direct Growth
++7.07%
++21.02%
+26,249.39
+Mahindra Manulife Multi Cap Fund Direct Growth
++6.84%
++19.91%
+6,643.08
+ICICI Prudential Multicap Fund Direct Plan Growth
++7.16%
++18.98%
+17,675.80
+Nippon India Multi Cap Fund Direct Growth
++1.76%
++17.54%
+53,410.99
+Compare
+Fund management
+Education
+Mr. Agarwal is a B.Com. and Chartered Accountant
+Experience
+Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.
+Also manages these schemes
+HDFC Gold ETF Fund of Fund Direct Plan Growth
+HDFC Balanced Advantage Fund Direct Growth
+HDFC NIFTY 50 Index Fund Direct Growth
+HDFC BSE Sensex Index Fund Direct Growth
+HDFC Equity Savings Direct Plan Growth
+HDFC Multi Asset Allocation Fund Direct Growth
+HDFC Arbitrage Fund Direct Growth
+HDFC Retirement Savings Fund Equity Plan Direct Growth
+HDFC Retirement Savings Fund Hybrid Equity Plan Direct Growth
+HDFC Retirement Savings Fund Hybrid Debt Plan Direct Growth
+HDFC NIFTY 50 ETF IDCW
+HDFC NIFTY50 Equal Weight Index Fund Direct Growth
+HDFC Developed World Overseas Equity Passive FoF Direct Growth
+HDFC NIFTY Next 50 Index Fund Direct Growth
+HDFC NIFTY 100 Index Fund Direct Growth
+HDFC NIFTY 100 Equal Weight Index Fund Direct Growth
+HDFC Silver ETF FoF Direct Growth
+HDFC NIFTY Midcap 150 Index Fund Direct Growth
+HDFC Nifty Smallcap 250 Index Fund Direct Growth
+HDFC BSE 500 Index Fund Direct Growth
+HDFC BSE Sensex ETF
+HDFC NIFTY200 Momentum 30 Index Fund Direct Growth
+HDFC NIFTY Realty Index Fund Direct Growth
+HDFC NIFTY100 Low Volatility 30 Index Fund Direct Growth
+HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth
+HDFC Nifty LargeMidcap 250 Index Fund Direct Growth
+HDFC Nifty India Digital Index Fund Direct Growth
+HDFC Nifty100 Quality 30 Index Fund Direct Growth
+HDFC Nifty Top 20 Equal Weight Index Fund Direct Growth
+HDFC BSE India Sector Leaders Index Fund Direct Growth
+HDFC Nifty India Consumption Index Fund Direct Growth
+HDFC Nifty Auto Index Fund Direct Growth
+Education
+CA (ICAI, INDIA), B.Com (University of Mumbai)
+Experience
+Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.
+Also manages these schemes
+HDFC Gold ETF Fund of Fund Direct Plan Growth
+HDFC Balanced Advantage Fund Direct Growth
+HDFC NIFTY 50 Index Fund Direct Growth
+HDFC BSE Sensex Index Fund Direct Growth
+HDFC Equity Savings Direct Plan Growth
+HDFC Multi Asset Allocation Fund Direct Growth
+HDFC Arbitrage Fund Direct Growth
+HDFC Retirement Savings Fund Equity Plan Direct Growth
+HDFC Retirement Savings Fund Hybrid Equity Plan Direct Growth
+HDFC Retirement Savings Fund Hybrid Debt Plan Direct Growth
+HDFC NIFTY50 Equal Weight Index Fund Direct Growth
+HDFC Developed World Overseas Equity Passive FoF Direct Growth
+HDFC NIFTY Next 50 Index Fund Direct Growth
+HDFC NIFTY 100 Index Fund Direct Growth
+HDFC NIFTY 100 Equal Weight Index Fund Direct Growth
+HDFC Silver ETF FoF Direct Growth
+HDFC NIFTY Midcap 150 Index Fund Direct Growth
+HDFC Nifty Smallcap 250 Index Fund Direct Growth
+HDFC BSE 500 Index Fund Direct Growth
+HDFC NIFTY200 Momentum 30 Index Fund Direct Growth
+HDFC NIFTY Realty Index Fund Direct Growth
+HDFC NIFTY100 Low Volatility 30 Index Fund Direct Growth
+HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth
+HDFC Nifty LargeMidcap 250 Index Fund Direct Growth
+HDFC Nifty India Digital Index Fund Direct Growth
+HDFC Nifty100 Quality 30 Index Fund Direct Growth
+HDFC Nifty Top 20 Equal Weight Index Fund Direct Growth
+HDFC BSE India Sector Leaders Index Fund Direct Growth
+HDFC Nifty India Consumption Index Fund Direct Growth
+HDFC Nifty Auto Index Fund Direct Growth
+About
+HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth
+HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth is a Equity Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Arun Agarwal is the Current Fund Manager of HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,34,238 Cr and the Latest NAV as of 03 Jul 2026 is ₹10.12.
+The HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100.
+;
+Investment Objective
+The scheme seeks to generate returns that are commensurate (before fees and expenses) with the performance of the Nifty500 Multicap 50:25:25 Index, subject to tracking error.
+Fund benchmark
+Nifty 500 Multicap 50:25:25 Total Return Index
+Scheme Information Document(SID)
+Fund house
+Rank (total assets)
+#2 in India
+Total AUM
+₹9,34,237.77 Cr
+Date of Incorporation
+10 Dec 1999
+Phone
+022 – 66316333
+E-mail
+[email protected]
+Website
+http://www.hdfcfund.com
+Launch Date
+10 Dec 1999
+Address
+"HDFC House", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020
+Custodian
+Hongkong & Shanghai Banking Corporation
+Registrar & Transfer Agent
+Cams
+Email
+[email protected]
+Website
+www.camsonline.com
+Address
+7th Floor, Tower II, Rayala Towers, 158, Anna Salai,

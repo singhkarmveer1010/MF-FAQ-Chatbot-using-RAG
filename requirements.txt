@@ -1,0 +1,36 @@
+# =============================================================================
+# Mutual Fund FAQ Assistant — Python Dependencies
+# =============================================================================
+# Derived from Architecture Document §8 (Technology Stack Summary)
+# Install: pip install -r requirements.txt
+# Python:  3.10+
+# =============================================================================
+
+# --- API Framework ---
+fastapi>=0.100.0
+uvicorn[standard]
+
+# --- LLM Orchestration ---
+langchain>=0.2.0
+langchain-groq
+langchain-community
+
+# --- Embedding Model (BGE) ---
+sentence-transformers
+
+# --- Vector Store ---
+chromadb
+faiss-cpu                          # Optional alternative to ChromaDB
+
+# --- Web Scraping & Document Loading ---
+beautifulsoup4
+requests
+lxml
+
+# --- Configuration & Environment ---
+python-dotenv
+pydantic>=2.0
+
+# --- Testing ---
+pytest
+pytest-cov
