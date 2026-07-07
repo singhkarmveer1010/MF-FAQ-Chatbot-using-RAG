@@ -38,7 +38,7 @@ export default function Home() {
     fetchSchemes();
   }, []);
 
-  const fetchHealth = async () => {
+  async function fetchHealth() {
     try {
       const res = await fetch("/api/health");
       if (res.ok) {
@@ -53,9 +53,9 @@ export default function Home() {
     } catch {
       setHealth((prev) => ({ ...prev, status: "offline" }));
     }
-  };
+  }
 
-  const fetchSchemes = async () => {
+  async function fetchSchemes() {
     try {
       const res = await fetch("/api/schemes");
       if (res.ok) {
@@ -68,7 +68,7 @@ export default function Home() {
       // Keep DEFAULT_SCHEMES on network error / static preview
       console.warn("Using default scheme catalog fallback.");
     }
-  };
+  }
 
   const handleSelectScheme = (scheme: string) => {
     setActiveScheme(scheme);
