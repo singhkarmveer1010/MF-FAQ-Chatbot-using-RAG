@@ -156,6 +156,9 @@ The frontend is a standalone, modern **Next.js TypeScript application** located 
    - **Root Directory:** Click **Edit** and select `frontend` (or type `frontend`).
 5. Do **not** click Deploy yet! Proceed to Step 2.2 first.
 
+> [!IMPORTANT]
+> **Do Not Override Build or Install Commands:** When **Root Directory** is set to `frontend`, Vercel automatically navigates into the `frontend/` directory before building. In your Vercel Project Settings under **Build & Development Settings**, ensure that **Install Command** and **Build Command** are left at their defaults (do **NOT** enter `cd frontend && npm install` or `cd frontend && npm run build`, as Vercel is already inside `frontend/` and will fail with `cd: frontend: No such file or directory`).
+
 ### Step 2.2: Configure Vercel API Rewrites (`next.config.ts`)
 To prevent CORS errors and avoid hardcoding production backend URLs inside frontend components, the Next.js app utilizes proxy rewrites defined in `frontend/next.config.ts`. When the frontend calls `/api/query` or `/api/schemes`, Vercel's edge network securely forwards the request to your Railway backend.
 
