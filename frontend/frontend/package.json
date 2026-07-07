@@ -1,0 +1,17 @@
+{
+  "name": "frontend-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd .. && npm run dev",
+    "build": "cd .. && npm run build && cp -r ../.next ../../.next 2>/dev/null || cp -r ../.next ../../.next || true",
+    "start": "cd .. && npm run start",
+    "lint": "cd .. && npm run lint",
+    "postinstall": "cd .. && npm install"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}

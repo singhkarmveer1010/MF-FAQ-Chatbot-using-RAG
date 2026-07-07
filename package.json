@@ -1,0 +1,17 @@
+{
+  "name": "mf-faq-chatbot-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build && cp -r frontend/.next .next 2>/dev/null || cp -r frontend/.next .next || true",
+    "start": "cd frontend && npm run start",
+    "lint": "cd frontend && npm run lint",
+    "postinstall": "cd frontend && npm install"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}
