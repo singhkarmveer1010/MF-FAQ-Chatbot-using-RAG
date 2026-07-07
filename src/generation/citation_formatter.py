@@ -11,7 +11,7 @@ import logging
 import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 # Ensure project root is in sys.path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
