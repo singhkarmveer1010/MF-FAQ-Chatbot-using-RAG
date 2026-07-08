@@ -41,5 +41,9 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=5 \
     CMD curl -f http://localhost:${PORT:-8000}/api/health || exit 1
 
-# Start FastAPI application with uvicorn listening on assigned PORT or default 8000
-CMD ["sh", "-c", "uvicorn src.api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Copy startup script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Start FastAPI application using robust shell script
+CMD ["/app/start.sh"]

@@ -131,6 +131,14 @@ async def get_ui():
     return await root()
 
 
+@app.get("/health", summary="Root Health Probe Endpoint")
+@app.head("/health")
+async def root_health():
+    """Root health endpoint alias for deployment probes."""
+    return {"status": "ok", "version": "1.0.0", "engine": "llama-3.3-70b-versatile"}
+
+
+
 if __name__ == "__main__":
     import uvicorn
     logger.info(f"Launching Uvicorn server on http://{API_HOST}:{API_PORT} ...")
