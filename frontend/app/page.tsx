@@ -103,11 +103,12 @@ export default function Home() {
         body: JSON.stringify({ query: payloadQuery }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Server returned HTTP ${response.status}`);
-      }
+      const data = await response.json().catch(() => ({}));
 
-      const data = await response.json();
+      if (!response.ok) {
+        const detailMsg = data.error || data.detail || data.message || `HTTP ${response.status}: ${response.statusText}`;
+        throw new Error(detailMsg);
+      }
 
       const botMsg: Message = {
         id: `bot-${Date.now()}`,
@@ -120,14 +121,17 @@ export default function Home() {
       };
 
       setMessages((prev) => [...prev, botMsg]);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Query execution error:", err);
+      const errMsgText =
+        err?.message && !err.message.includes("Failed to fetch")
+          ? `⚠️ Backend error: ${err.message}`
+          : "⚠️ Unable to connect to the backend server. Please verify that your Railway FastAPI service is running.";
       const errorMsg: Message = {
         id: `err-${Date.now()}`,
         sender: "bot",
         type: "error",
-        text:
-          "⚠️ Unable to connect to the backend server. Please verify that the Railway FastAPI server is running or check your Vercel API rewrite settings.",
+        text: errMsgText,
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
       setMessages((prev) => [...prev, errorMsg]);

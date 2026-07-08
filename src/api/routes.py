@@ -163,7 +163,7 @@ async def post_query(request: QueryRequest):
         res = answer_query(request.query, use_llm_intent=request.use_llm_intent)
     except Exception as e:
         logger.error(f"Pipeline execution error: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail="Internal processing error while generating response.")
+        raise HTTPException(status_code=500, detail=f"Internal processing error while generating response: {str(e)}")
 
     stat = res["status"]
     intent = res["intent"]

@@ -2,61 +2,130 @@
  * Next.js App Router — Catch-all API Proxy Route
  *
  * Proxies every request to /api/<anything> → Railway FastAPI backend.
- * Reads NEXT_PUBLIC_API_URL at *runtime* (not build-time), so changing
- * the env var in Vercel and redeploying always picks up the correct URL.
+ * Reads the backend URL from environment variables at REQUEST TIME
+ * (inside the handler, not at module scope) to ensure Vercel serverless
+ * always picks up the correct value.
+ *
+ * Supported env vars (checked in order):
+ *   1. BACKEND_URL          — server-side only, recommended for Vercel
+ *   2. NEXT_PUBLIC_API_URL  — works but exposed to client bundle
  */
 
 import { NextRequest, NextResponse } from "next/server";
 
-// Railway backend base URL — set this in Vercel Environment Variables
-const RAILWAY_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  process.env.RAILWAY_URL ||
-  "";
+function getBackendUrl(): string {
+  // Read inside the function, NOT at module scope.
+  // This guarantees Vercel serverless reads the env var on every cold start.
+  return (
+    process.env.BACKEND_URL ||
+    process.env.NEXT_PUBLIC_API_URL ||
+    "https://mf-faq-chatbot-using-rag-production.up.railway.app"
+  );
+}
 
-async function handler(
+export async function GET(
   req: NextRequest,
   context: { params: Promise<{ path: string[] }> }
 ) {
+  return proxyToBackend(req, context);
+}
+
+export async function POST(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+) {
+  return proxyToBackend(req, context);
+}
+
+export async function PUT(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+) {
+  return proxyToBackend(req, context);
+}
+
+export async function PATCH(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+) {
+  return proxyToBackend(req, context);
+}
+
+export async function DELETE(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+) {
+  return proxyToBackend(req, context);
+}
+
+export async function OPTIONS(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+) {
+  return proxyToBackend(req, context);
+}
+
+async function proxyToBackend(
+  req: NextRequest,
+  context: { params: Promise<{ path: string[] }> }
+): Promise<NextResponse> {
+  const backendUrl = getBackendUrl();
   const { path } = await context.params;
 
-  if (!RAILWAY_URL) {
+  if (!backendUrl) {
+    console.error(
+      "[API Proxy] No backend URL configured. Set BACKEND_URL or NEXT_PUBLIC_API_URL in Vercel env vars."
+    );
     return NextResponse.json(
       {
         error:
-          "Backend URL not configured. Set NEXT_PUBLIC_API_URL in Vercel Environment Variables.",
+          "Backend URL not configured. Set BACKEND_URL (or NEXT_PUBLIC_API_URL) in Vercel → Settings → Environment Variables.",
       },
       { status: 503 }
     );
   }
 
-  // Build the target URL: strip trailing slash from base, then append /api/<path>
-  const base = RAILWAY_URL.replace(/\/$/, "");
+  // Build target URL
+  const base = backendUrl.replace(/\/+$/, "");
   const pathStr = path.join("/");
-  const search = req.nextUrl.search; // preserve query string e.g. ?background=true
+  const search = req.nextUrl.search; // preserve query params
   const targetUrl = `${base}/api/${pathStr}${search}`;
 
-  // Forward all headers except host (which must match the target)
-  const forwardHeaders = new Headers(req.headers);
-  forwardHeaders.delete("host");
+  // Forward headers (strip host so it matches the target)
+  const forwardHeaders = new Headers();
+  req.headers.forEach((value, key) => {
+    const lower = key.toLowerCase();
+    if (lower !== "host" && lower !== "connection") {
+      forwardHeaders.set(key, value);
+    }
+  });
 
   try {
+    // Read body for non-GET/HEAD requests
+    let body: ArrayBuffer | undefined;
+    if (req.method !== "GET" && req.method !== "HEAD") {
+      try {
+        body = await req.arrayBuffer();
+      } catch {
+        // empty body is fine
+      }
+    }
+
     const upstream = await fetch(targetUrl, {
       method: req.method,
       headers: forwardHeaders,
-      body:
-        req.method !== "GET" && req.method !== "HEAD"
-          ? await req.arrayBuffer()
-          : undefined,
-      // @ts-expect-error — Node 18+ fetch supports duplex
-      duplex: "half",
+      body,
     });
 
-    // Stream the response body back
     const responseBody = await upstream.arrayBuffer();
-    const responseHeaders = new Headers(upstream.headers);
-    // Remove transfer-encoding so Next.js doesn't double-chunk
-    responseHeaders.delete("transfer-encoding");
+    const responseHeaders = new Headers();
+    upstream.headers.forEach((value, key) => {
+      const lower = key.toLowerCase();
+      // Skip hop-by-hop headers
+      if (lower !== "transfer-encoding" && lower !== "connection") {
+        responseHeaders.set(key, value);
+      }
+    });
 
     return new NextResponse(responseBody, {
       status: upstream.status,
@@ -64,21 +133,15 @@ async function handler(
       headers: responseHeaders,
     });
   } catch (err) {
-    console.error(`[API Proxy] Failed to reach Railway backend at ${targetUrl}:`, err);
+    console.error(
+      `[API Proxy] Failed to reach Railway backend at ${targetUrl}:`,
+      err
+    );
     return NextResponse.json(
       {
-        error:
-          "Unable to reach the Railway backend. Check that your Railway service is running and NEXT_PUBLIC_API_URL is correct.",
-        target: targetUrl,
+        error: `Unable to reach the Railway backend at ${base}. Verify the service is running.`,
       },
       { status: 502 }
     );
   }
 }
-
-export const GET = handler;
-export const POST = handler;
-export const PUT = handler;
-export const PATCH = handler;
-export const DELETE = handler;
-export const OPTIONS = handler;
