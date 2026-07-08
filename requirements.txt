@@ -12,6 +12,8 @@ uvicorn[standard]
 
 # --- LLM Orchestration ---
 langchain>=0.2.0
+langchain-core
+langchain-text-splitters
 langchain-groq
 langchain-community
 
