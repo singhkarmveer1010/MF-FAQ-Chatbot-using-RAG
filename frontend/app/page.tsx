@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "./components/Sidebar";
 import ChatArea from "./components/ChatArea";
 import InputBar from "./components/InputBar";
+import Icon from "./components/Icon";
 import { Message, HealthStatus } from "./types/chat";
 
 const DEFAULT_SCHEMES = [
@@ -175,14 +176,14 @@ export default function Home() {
           </div>
           <div className="nav-stats">
             <div className="stat-pill">
-              <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--accent-cyan)" }}>
-                database
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <Icon name="database" size={16} color="var(--accent-cyan)" />
               </span>
               <span>ChromaDB Vector Store</span>
             </div>
             <div className="stat-pill">
-              <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--accent-emerald)" }}>
-                bolt
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <Icon name="bolt" size={16} color="var(--accent-emerald)" />
               </span>
               <span>Llama 3.3 70B (Temp 0.0)</span>
             </div>

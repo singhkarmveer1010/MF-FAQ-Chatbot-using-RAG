@@ -37,9 +37,8 @@ htmlcov/
 *.log
 
 # Vector Store & Index Databases
-vectorstore/*.sqlite3
-vectorstore/*.db
-vectorstore/*-*/
+# Ignore all vectorstore contents except the .gitkeep placeholder
+vectorstore/*
 !vectorstore/.gitkeep
 
 # OS & IDE Files

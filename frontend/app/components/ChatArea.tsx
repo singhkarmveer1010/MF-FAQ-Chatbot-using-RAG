@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import { Message } from "../types/chat";
+import Icon from "./Icon";
 
 interface ChatAreaProps {
   messages: Message[];
@@ -28,11 +29,11 @@ export default function ChatArea({
       text: "What is the exit load and expense ratio of HDFC Nifty 50 Index Fund?",
     },
     {
-      icon: "account_balance_wallet",
+      icon: "wallet",
       text: "What is the minimum SIP investment amount for HDFC Children's Fund?",
     },
     {
-      icon: "lock_clock",
+      icon: "clock",
       text: "Show me the lock-in period and tax benefits for HDFC Gold ETF FoF.",
     },
     {
@@ -46,10 +47,8 @@ export default function ChatArea({
       {messages.length === 0 ? (
         /* Welcome Dashboard Initial State */
         <div className="dashboard-welcome">
-          <div className="welcome-logo-glow">
-            <span className="material-symbols-outlined" style={{ fontSize: "38px" }}>
-              verified_user
-            </span>
+          <div className="welcome-logo-glow" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Icon name="verified_user" size={38} color="var(--accent-cyan)" />
           </div>
           <h2 className="welcome-title">
             {activeScheme ? `Ask About ${activeScheme}` : "HDFC Mutual Fund Facts Assistant"}
@@ -66,10 +65,8 @@ export default function ChatArea({
                 className="example-card"
                 onClick={() => onSelectExample(ex.text)}
               >
-                <div className="example-icon">
-                  <span className="material-symbols-outlined" style={{ fontSize: "20px" }}>
-                    {ex.icon}
-                  </span>
+                <div className="example-icon" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Icon name={ex.icon} size={20} />
                 </div>
                 <span className="example-text">{ex.text}</span>
               </button>
@@ -95,12 +92,17 @@ export default function ChatArea({
                 >
                   <div className="bot-header">
                     <div className="bot-sender-tag">
-                      <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
-                        {msg.type === "refusal"
-                          ? "warning"
-                          : msg.type === "security"
-                          ? "shield"
-                          : "verified"}
+                      <span style={{ display: "flex", alignItems: "center" }}>
+                        <Icon
+                          name={
+                            msg.type === "refusal"
+                              ? "warning"
+                              : msg.type === "security"
+                              ? "shield"
+                              : "verified"
+                          }
+                          size={18}
+                        />
                       </span>
                       <span>
                         {msg.type === "refusal"
@@ -132,14 +134,14 @@ export default function ChatArea({
                           className="source-link-btn"
                         >
                           <span>View Official Scheme Page</span>
-                          <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>
-                            open_in_new
+                          <span style={{ display: "flex", alignItems: "center" }}>
+                            <Icon name="open_in_new" size={16} />
                           </span>
                         </a>
                       )}
                       <div className="attribution-tag">
-                        <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>
-                          history
+                        <span style={{ display: "flex", alignItems: "center" }}>
+                          <Icon name="history" size={14} />
                         </span>
                         <span>Last Updated: Live Groww Corpus Sync</span>
                       </div>

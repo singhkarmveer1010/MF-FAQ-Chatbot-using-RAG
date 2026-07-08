@@ -7,6 +7,7 @@ FastAPI Application Entry Point for Mutual Fund FAQ Assistant (Phase 5.7 & 5.8).
 """
 
 import logging
+import os
 import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -66,10 +67,27 @@ app = FastAPI(
 )
 
 # Configure CORS Middleware (§5.8)
+# ─────────────────────────────────────────────────────────────────────────────
+# IMPORTANT: Browsers enforce that allow_credentials=True CANNOT be combined
+# with allow_origins=["*"]. We read explicit origins from ALLOWED_ORIGINS env
+# var (comma-separated). In production, set this to your Vercel frontend URL.
+# Example: ALLOWED_ORIGINS=https://your-app.vercel.app
+# ─────────────────────────────────────────────────────────────────────────────
+_raw_origins = os.getenv("ALLOWED_ORIGINS", "")
+if _raw_origins.strip():
+    allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+    allow_credentials = True
+else:
+    # Development fallback — allow all origins without credentials
+    allowed_origins = ["*"]
+    allow_credentials = False
+
+logger.info(f"CORS configured: origins={allowed_origins}, credentials={allow_credentials}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all frontend origins during development
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )

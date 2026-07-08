@@ -750,6 +750,14 @@ html, body {
   40% { opacity: 1; transform: scale(1.1); }
 }
 
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .app-container {

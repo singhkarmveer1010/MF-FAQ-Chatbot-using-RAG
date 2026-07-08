@@ -20,7 +20,6 @@ sentence-transformers
 
 # --- Vector Store ---
 chromadb
-faiss-cpu                          # Optional alternative to ChromaDB
 
 # --- Web Scraping & Document Loading ---
 beautifulsoup4

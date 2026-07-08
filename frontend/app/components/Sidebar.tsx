@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { HealthStatus } from "../types/chat";
+import Icon from "./Icon";
 
 interface SidebarProps {
   schemes: string[];
@@ -26,29 +27,13 @@ export default function Sidebar({
     s.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const getSchemeIcon = (index: number) => {
-    const icons = [
-      "trending_up",
-      "equalizer",
-      "analytics",
-      "account_balance_wallet",
-      "account_balance",
-      "water_drop",
-      "security",
-      "leaderboard",
-      "savings",
-      "construction",
-    ];
-    return icons[index % icons.length];
-  };
-
   return (
     <aside className="sidebar">
       {/* Brand Header */}
       <div className="sidebar-header">
         <div className="brand-title-group">
           <div className="brand-icon">
-            <span className="material-symbols-outlined">analytics</span>
+            <Icon name="analytics" size={24} />
           </div>
           <div>
             <h1 className="brand-title">Mutual Fund FAQ</h1>
@@ -73,7 +58,9 @@ export default function Sidebar({
       {/* Scheme Search */}
       <div className="sidebar-search">
         <div className="search-input-wrapper">
-          <span className="material-symbols-outlined search-icon">search</span>
+          <span className="search-icon" style={{ display: "flex", alignItems: "center" }}>
+            <Icon name="search" size={18} />
+          </span>
           <input
             type="text"
             className="search-input"
@@ -94,7 +81,7 @@ export default function Sidebar({
             No matching schemes found.
           </div>
         ) : (
-          filteredSchemes.map((scheme, idx) => {
+          filteredSchemes.map((scheme) => {
             const isActive = activeScheme === scheme;
             return (
               <button
@@ -102,8 +89,8 @@ export default function Sidebar({
                 onClick={() => onSelectScheme(scheme)}
                 className={`scheme-item ${isActive ? "active" : ""}`}
               >
-                <span className="material-symbols-outlined scheme-icon">
-                  {getSchemeIcon(idx)}
+                <span className="scheme-icon" style={{ display: "flex", alignItems: "center" }}>
+                  <Icon name="fund" size={16} />
                 </span>
                 <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {scheme}
@@ -122,8 +109,8 @@ export default function Sidebar({
           disabled={isIngesting}
           title="Trigger background re-ingestion of Groww scheme docs"
         >
-          <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
-            {isIngesting ? "sync_saved_locally" : "refresh"}
+          <span style={{ display: "flex", alignItems: "center" }}>
+            <Icon name={isIngesting ? "sync_saved_locally" : "refresh"} size={18} />
           </span>
           <span>{isIngesting ? "Refreshing Docs..." : "Sync Groww Facts"}</span>
         </button>

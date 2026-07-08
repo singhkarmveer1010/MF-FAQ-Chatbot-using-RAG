@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, KeyboardEvent } from "react";
+import Icon from "./Icon";
 
 interface InputBarProps {
   onSendMessage: (query: string) => void;
@@ -39,19 +40,17 @@ export default function InputBar({
         {activeScheme && (
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <span className="active-scheme-tag">
-              <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>
-                filter_alt
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <Icon name="filter" size={14} />
               </span>
               <span>Context: {activeScheme}</span>
               <button
                 onClick={onClearScheme}
                 className="clear-scheme-btn"
                 title="Clear scheme filter"
-                style={{ marginLeft: "4px" }}
+                style={{ marginLeft: "4px", display: "flex", alignItems: "center" }}
               >
-                <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>
-                  close
-                </span>
+                <Icon name="close" size={14} />
               </button>
             </span>
           </div>
@@ -78,10 +77,13 @@ export default function InputBar({
             disabled={!text.trim() || isGenerating}
             className="send-btn"
             title="Send query (Enter)"
+            style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
           >
-            <span className="material-symbols-outlined" style={{ fontSize: "20px" }}>
-              {isGenerating ? "hourglass_top" : "arrow_upward"}
-            </span>
+            <Icon
+              name={isGenerating ? "loading" : "send"}
+              size={20}
+              className={isGenerating ? "animate-spin" : ""}
+            />
           </button>
         </div>
 
