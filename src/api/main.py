@@ -9,6 +9,7 @@ FastAPI Application Entry Point for Mutual Fund FAQ Assistant (Phase 5.7 & 5.8).
 import logging
 import os
 import sys
+import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -29,20 +30,31 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(na
 logger = logging.getLogger("api_main")
 
 
+def _prewarm_model():
+    """Background thread: load BGE model into cache so the first query is instant."""
+    try:
+        logger.info("🔥 [Prewarm] Loading BGE embedding model in background thread...")
+        get_embedding_model()
+        logger.info("✅ [Prewarm] Embedding model loaded and cached successfully.")
+    except Exception as e:
+        logger.error(f"❌ [Prewarm] Failed to pre-warm embedding model: {e}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
     Application startup and shutdown lifecycle management (§5.7).
-    Pre-warms embedding models, checks ChromaDB persistent collection,
-    and initializes the Automated Ingestion Scheduler (Phase 7).
+    Pre-warms embedding models in a background thread so the server
+    starts instantly and passes Railway's healthcheck before the
+    model finishes loading. Initializes the Automated Ingestion
+    Scheduler (Phase 7) the same way.
     """
     logger.info("=== Starting Mutual Fund FAQ Assistant API Server ===")
-    logger.info("Pre-warming BGE embedding model into memory cache...")
-    try:
-        get_embedding_model()
-        logger.info("Embedding model pre-warmed successfully. Ready for instant query processing!")
-    except Exception as e:
-        logger.error(f"Failed to pre-warm embedding model: {e}")
+
+    # Non-blocking: pre-warm model in background thread so healthcheck
+    # at /api/health passes immediately without waiting for model load.
+    prewarm_thread = threading.Thread(target=_prewarm_model, daemon=True, name="ModelPrewarm")
+    prewarm_thread.start()
 
     # Start automated background ingestion scheduler (Phase 7)
     try:
