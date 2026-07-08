@@ -140,12 +140,22 @@ export default function Home() {
     if (isIngesting) return;
     setIsIngesting(true);
     try {
-      const res = await fetch("/api/ingest?background=true", { method: "POST" });
+      const token = process.env.NEXT_PUBLIC_INGEST_TOKEN ?? "";
+      const headers: HeadersInit = { "Content-Type": "application/json" };
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+      const res = await fetch("/api/ingest?background=true", {
+        method: "POST",
+        headers,
+      });
       if (res.ok) {
         alert("✅ Background ingestion triggered successfully! Corpus will refresh shortly.");
         fetchSchemes();
+      } else if (res.status === 401) {
+        alert("🔒 Admin token missing or invalid. Set NEXT_PUBLIC_INGEST_TOKEN in Vercel env vars.");
       } else {
-        alert("⚠️ Ingestion trigger failed or requires admin token authentication.");
+        alert("⚠️ Ingestion trigger failed. Please try again.");
       }
     } catch {
       alert("⚠️ Network error while attempting to trigger ingestion.");
