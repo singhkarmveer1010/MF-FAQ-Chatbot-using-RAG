@@ -9,7 +9,9 @@ Implements the Metadata-Aware Cosine Retrieval Strategy:
 5. Automatic fallback mechanism to unfiltered corpus search if filtered results are sparse (§4.2.5).
 """
 
+import json
 import logging
+import os
 import re
 import sys
 from pathlib import Path
@@ -21,11 +23,6 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from config.settings import RETRIEVAL_TOP_K, SIMILARITY_THRESHOLD, VECTOR_STORE_PATH, EMBEDDING_MODEL
-from src.ingestion.embedder import (
-    DEFAULT_COLLECTION_NAME,
-    get_embedding_model,
-    get_vector_store_client,
-)
 from src.ingestion.scheduler import vector_store_lock
 
 # Configure logging
@@ -34,6 +31,10 @@ logger = logging.getLogger("retriever")
 
 # Mandatory BGE query instruction prefix for asymmetric retrieval (§3.2.1)
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
+DEFAULT_COLLECTION_NAME = "mutual_fund_chunks"
+DEFAULT_PROCESSED_DIR = BASE_DIR / "data" / "processed"
+ENABLE_VECTOR_RETRIEVAL = os.getenv("ENABLE_VECTOR_RETRIEVAL", "false").lower() in {"1", "true", "yes", "on"}
+_LEXICAL_CHUNK_CACHE: Optional[List[Dict[str, Any]]] = None
 
 # Scheme Alias Mapping for Smart Metadata Filtering (§4.2.3)
 SCHEME_ALIAS_MAP = [
@@ -110,6 +111,8 @@ def embed_query(query_text: str, model: Any = None) -> List[float]:
         list[float]: 384-dimensional normalized embedding vector.
     """
     if model is None:
+        from src.ingestion.embedder import get_embedding_model
+
         model = get_embedding_model(model_name=EMBEDDING_MODEL)
         
     prefixed_query = f"{BGE_QUERY_PREFIX}{query_text.strip()}"
@@ -121,6 +124,117 @@ def embed_query(query_text: str, model: Any = None) -> List[float]:
         show_progress_bar=False,
     )
     return embedding_array[0].tolist()
+
+
+def _tokenize(text: str) -> List[str]:
+    """Return simple normalized tokens for fallback corpus retrieval."""
+    return [
+        token
+        for token in re.findall(r"[a-z0-9]+", text.lower())
+        if len(token) > 2 and token not in {"the", "and", "for", "with", "hdfc", "fund"}
+    ]
+
+
+def _load_processed_chunks(processed_dir: Path = DEFAULT_PROCESSED_DIR) -> List[Dict[str, Any]]:
+    """Load checked-in processed chunks without touching ChromaDB or embedding models."""
+    global _LEXICAL_CHUNK_CACHE
+    if _LEXICAL_CHUNK_CACHE is not None:
+        return _LEXICAL_CHUNK_CACHE
+
+    chunks: List[Dict[str, Any]] = []
+    if not processed_dir.exists():
+        logger.error("Processed chunks directory not found: %s", processed_dir)
+        _LEXICAL_CHUNK_CACHE = chunks
+        return chunks
+
+    for file_path in sorted(processed_dir.glob("*_chunks.json")):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, list):
+                chunks.extend(item for item in data if isinstance(item, dict))
+        except Exception as exc:
+            logger.warning("Failed to load processed chunks from %s: %s", file_path, exc)
+
+    logger.info("Loaded %d processed chunks for lightweight retrieval.", len(chunks))
+    _LEXICAL_CHUNK_CACHE = chunks
+    return chunks
+
+
+def _retrieve_from_processed_chunks(
+    query: str,
+    top_k: int = RETRIEVAL_TOP_K,
+    scheme_filter: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """Fallback retriever for small deployments where vector dependencies are too heavy."""
+    chunks = _load_processed_chunks()
+    if not chunks:
+        return []
+
+    query_tokens = set(_tokenize(query))
+    if not query_tokens:
+        return []
+
+    if scheme_filter is None:
+        scheme_filter = extract_scheme_filter(query)
+
+    scored: List[Dict[str, Any]] = []
+    for idx, chunk in enumerate(chunks):
+        chunk_scheme = str(chunk.get("scheme_name", ""))
+        if scheme_filter and chunk_scheme != scheme_filter:
+            continue
+
+        searchable_text = " ".join(
+            str(chunk.get(key, ""))
+            for key in ("scheme_name", "category", "document_type", "text")
+        )
+        chunk_tokens = set(_tokenize(searchable_text))
+        overlap = query_tokens & chunk_tokens
+        if not overlap:
+            continue
+
+        scheme_bonus = 3 if scheme_filter and chunk_scheme == scheme_filter else 0
+        score = len(overlap) + scheme_bonus
+        scored.append(
+            {
+                "score": score,
+                "chunk": chunk,
+                "idx": idx,
+            }
+        )
+
+    # If a strict scheme filter produced no hits, search the whole checked-in corpus.
+    if not scored and scheme_filter:
+        return _retrieve_from_processed_chunks(query=query, top_k=top_k, scheme_filter=None)
+
+    scored.sort(key=lambda item: item["score"], reverse=True)
+
+    results: List[Dict[str, Any]] = []
+    for rank, item in enumerate(scored[:top_k], 1):
+        chunk = item["chunk"]
+        score = item["score"]
+        similarity = min(0.99, 0.55 + (score * 0.05))
+        results.append(
+            {
+                "chunk_id": str(chunk.get("chunk_id", f"processed_{item['idx']}")),
+                "similarity": round(similarity, 4),
+                "distance": round(1.0 - similarity, 4),
+                "text": str(chunk.get("text", "")),
+                "metadata": {
+                    "source_url": chunk.get("source_url", ""),
+                    "document_type": chunk.get("document_type", ""),
+                    "scheme_name": chunk.get("scheme_name", ""),
+                    "amc_name": chunk.get("amc_name", ""),
+                    "category": chunk.get("category", ""),
+                    "last_scraped_date": chunk.get("last_scraped_date", ""),
+                    "chunk_index": chunk.get("chunk_index", rank),
+                    "char_count": chunk.get("char_count", len(str(chunk.get("text", "")))),
+                },
+            }
+        )
+
+    logger.info("Lightweight retrieval returned %d chunks for query: '%s'", len(results), query)
+    return results
 
 
 def retrieve(
@@ -152,8 +266,15 @@ def retrieve(
         logger.warning("Empty query provided to retriever.")
         return []
 
-    # Step 1: Embed query
-    query_embedding = embed_query(query, model=model)
+    if not ENABLE_VECTOR_RETRIEVAL:
+        return _retrieve_from_processed_chunks(query=query, top_k=top_k, scheme_filter=scheme_filter)
+
+    try:
+        # Step 1: Embed query
+        query_embedding = embed_query(query, model=model)
+    except Exception as exc:
+        logger.warning("Vector embedding unavailable; falling back to processed-chunk retrieval: %s", exc)
+        return _retrieve_from_processed_chunks(query=query, top_k=top_k, scheme_filter=scheme_filter)
 
     # Step 2: Auto-detect scheme filter if not specified
     if scheme_filter is None:
@@ -161,12 +282,14 @@ def retrieve(
 
     # Step 3: Connect to ChromaDB (under read/write mutex lock for thread safety vs background ingestion)
     with vector_store_lock:
+        from src.ingestion.embedder import get_vector_store_client
+
         client = get_vector_store_client(persist_directory=persist_dir)
         try:
             collection = client.get_collection(name=collection_name)
         except Exception as e:
             logger.error(f"Failed to load collection '{collection_name}': {e}")
-            return []
+            return _retrieve_from_processed_chunks(query=query, top_k=top_k, scheme_filter=scheme_filter)
 
         # Helper for querying ChromaDB and formatting results
         def query_chroma(where_clause: Optional[Dict[str, Any]] = None, fetch_k: int = top_k) -> List[Dict[str, Any]]:

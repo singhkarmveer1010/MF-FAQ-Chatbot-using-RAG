@@ -9,6 +9,7 @@ Implements Groq LLM response generation with strict rate-limit resilience and to
 """
 
 import logging
+import re
 import sys
 import time
 from pathlib import Path
@@ -67,6 +68,50 @@ def build_prompt_context(chunks: List[Dict[str, Any]], max_chars: int = MAX_CONT
         current_chars += len(block)
 
     return "\n".join(context_blocks)
+
+
+def build_extractive_fallback_answer(query: str, chunks: List[Dict[str, Any]]) -> str:
+    """
+    Build a concise facts-only answer from retrieved chunks when the LLM is
+    unavailable. This keeps demos and health of the chat flow independent from
+    Groq/library availability while still grounding the response in the corpus.
+    """
+    query_terms = {
+        token
+        for token in re.findall(r"[a-z0-9]+", query.lower())
+        if len(token) > 2 and token not in {"the", "and", "for", "with", "hdfc", "fund"}
+    }
+
+    candidate_sentences: List[str] = []
+    for chunk in chunks:
+        text = str(chunk.get("text", ""))
+        text = re.sub(r"^\[Scheme:.*?\]\s*", "", text, flags=re.DOTALL)
+        # Many scraped facts are line-oriented, so normalize newlines before sentence selection.
+        normalized = re.sub(r"\s+", " ", text).strip()
+        sentences = re.split(r"(?<=[.!?])\s+|(?<=%)\s+", normalized)
+        for sentence in sentences:
+            clean_sentence = sentence.strip(" -")
+            if len(clean_sentence) < 30:
+                continue
+            sentence_terms = set(re.findall(r"[a-z0-9]+", clean_sentence.lower()))
+            if query_terms & sentence_terms:
+                candidate_sentences.append(clean_sentence)
+            if len(candidate_sentences) >= 2:
+                break
+        if len(candidate_sentences) >= 2:
+            break
+
+    if not candidate_sentences and chunks:
+        text = re.sub(r"^\[Scheme:.*?\]\s*", "", str(chunks[0].get("text", "")), flags=re.DOTALL)
+        text = re.sub(r"\s+", " ", text).strip()
+        if text:
+            candidate_sentences.append(text[:350].rstrip(" ,;:") + ".")
+
+    if not candidate_sentences:
+        return "I don't have verified information on this in the indexed documents."
+
+    answer_body = " ".join(candidate_sentences[:2])
+    return f"From the indexed official scheme disclosure: {answer_body}"
 
 
 def call_llm_with_retry(prompt_text: str, model_name: str = LLM_MODEL) -> str:
@@ -186,9 +231,11 @@ def generate_answer(query: str, chunks: List[Dict[str, Any]]) -> Dict[str, Any]:
     status = "SUCCESS"
     lower_ans = raw_answer.lower()
     if any(term in lower_ans for term in ("rate limit", "high traffic", "quota")):
-        status = "RATE_LIMITED"
+        logger.warning("LLM rate-limited; using extractive corpus fallback.")
+        raw_answer = build_extractive_fallback_answer(query, chunks)
     elif raw_answer.startswith("Error:") or "error while processing" in lower_ans:
-        status = "ERROR"
+        logger.warning("LLM unavailable; using extractive corpus fallback.")
+        raw_answer = build_extractive_fallback_answer(query, chunks)
 
     # Ensure footer is present if LLM omitted it during successful generation
     footer_tag = "Last updated from sources:"

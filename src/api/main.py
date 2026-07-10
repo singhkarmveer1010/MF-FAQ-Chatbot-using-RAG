@@ -22,23 +22,30 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from config.settings import API_HOST, API_PORT
 from src.api.routes import router
-from src.ingestion.embedder import get_embedding_model
 from src.ingestion.scheduler import scheduler
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("api_main")
+ENABLE_VECTOR_RETRIEVAL = os.getenv("ENABLE_VECTOR_RETRIEVAL", "false").lower() in {"1", "true", "yes", "on"}
+PREWARM_EMBEDDINGS = os.getenv("PREWARM_EMBEDDINGS", "false").lower() in {"1", "true", "yes", "on"}
 
 
 def _prewarm_model():
     """Background thread: load BGE model and ensure ChromaDB collection is indexed."""
     try:
+        from src.ingestion.embedder import (
+            DEFAULT_COLLECTION_NAME,
+            get_embedding_model,
+            get_vector_store_client,
+            index_all_processed_chunks,
+        )
+
         logger.info("🔥 [Prewarm] Loading BGE embedding model in background thread...")
         get_embedding_model()
         logger.info("✅ [Prewarm] Embedding model loaded and cached successfully.")
         
         # Verify vector store collection exists and has chunks
-        from src.ingestion.embedder import get_vector_store_client, DEFAULT_COLLECTION_NAME, index_all_processed_chunks
         client = get_vector_store_client()
         try:
             col = client.get_collection(DEFAULT_COLLECTION_NAME)
@@ -65,10 +72,14 @@ async def lifespan(app: FastAPI):
     """
     logger.info("=== Starting Mutual Fund FAQ Assistant API Server ===")
 
-    # Non-blocking: pre-warm model in background thread so healthcheck
-    # at /api/health passes immediately without waiting for model load.
-    prewarm_thread = threading.Thread(target=_prewarm_model, daemon=True, name="ModelPrewarm")
-    prewarm_thread.start()
+    # Keep Railway/Vercel demo deployments responsive by default. The checked-in
+    # processed corpus can answer via lightweight retrieval without loading the
+    # sentence-transformer model at boot.
+    if ENABLE_VECTOR_RETRIEVAL and PREWARM_EMBEDDINGS:
+        prewarm_thread = threading.Thread(target=_prewarm_model, daemon=True, name="ModelPrewarm")
+        prewarm_thread.start()
+    else:
+        logger.info("Vector prewarm disabled; using lightweight processed-corpus retrieval.")
 
     # Start automated background ingestion scheduler (Phase 7)
     try:

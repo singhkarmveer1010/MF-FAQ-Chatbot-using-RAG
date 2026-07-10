@@ -19,20 +19,13 @@ COPY . .
 # Create necessary directories if not present
 RUN mkdir -p data/raw data/processed vectorstore
 
-# -----------------------------------------------------------------
-# Pre-download BGE embedding model AND pre-index all processed chunks
-# into ChromaDB vectorstore at build time.
-# This ensures zero cold-start delay on Railway deployment.
-# -----------------------------------------------------------------
-ENV SENTENCE_TRANSFORMERS_HOME=/app/models
-RUN python -c "from src.ingestion.embedder import index_all_processed_chunks; index_all_processed_chunks()"
-
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     API_HOST=0.0.0.0 \
     API_PORT=8000 \
     VECTOR_STORE_PATH=/app/vectorstore \
-    SENTENCE_TRANSFORMERS_HOME=/app/models
+    ENABLE_VECTOR_RETRIEVAL=false \
+    PREWARM_EMBEDDINGS=false
 
 # Expose API server port
 EXPOSE 8000
