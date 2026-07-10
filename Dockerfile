@@ -36,9 +36,6 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=180s --retries=5 \
     CMD curl -f http://localhost:${PORT:-8000}/api/health || exit 1
 
-# Copy startup script
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
-
-# Start FastAPI application using robust shell script
-CMD ["/app/start.sh"]
+# Start FastAPI directly. Using sh -c lets Railway provide PORT while avoiding
+# CRLF/shebang issues from platform-specific checkout settings.
+CMD ["sh", "-c", "uvicorn src.api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
