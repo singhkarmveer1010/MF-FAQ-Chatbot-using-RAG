@@ -88,21 +88,39 @@ app = FastAPI(
 _raw_origins = os.getenv("ALLOWED_ORIGINS", "")
 if _raw_origins.strip():
     allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+    # Auto-include common Vercel preview deployment patterns
+    _vercel_patterns = [
+        "https://*.vercel.app",
+    ]
+    # Also add localhost origins for development convenience
+    _dev_origins = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3001",
+    ]
+    for origin in _dev_origins:
+        if origin not in allowed_origins:
+            allowed_origins.append(origin)
     allow_credentials = True
+    allow_origin_regex = r"https://.*\.vercel\.app"
 else:
     # Development fallback — allow all origins without credentials
     allowed_origins = ["*"]
     allow_credentials = False
+    allow_origin_regex = None
 
 logger.info(f"CORS configured: origins={allowed_origins}, credentials={allow_credentials}")
 
-app.add_middleware(
-    CORSMiddleware,
+cors_kwargs = dict(
     allow_origins=allowed_origins,
     allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+if allow_origin_regex:
+    cors_kwargs["allow_origin_regex"] = allow_origin_regex
+
+app.add_middleware(CORSMiddleware, **cors_kwargs)
 
 # Include API Router
 app.include_router(router)

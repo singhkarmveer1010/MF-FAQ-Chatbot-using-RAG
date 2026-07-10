@@ -37,8 +37,8 @@ ENV PYTHONUNBUFFERED=1 \
 # Expose API server port
 EXPOSE 8000
 
-# Health check — give 120s start-period for first boot on cold container
-HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=5 \
+# Health check — give 180s start-period for first boot on cold container
+HEALTHCHECK --interval=30s --timeout=10s --start-period=180s --retries=5 \
     CMD curl -f http://localhost:${PORT:-8000}/api/health || exit 1
 
 # Copy startup script

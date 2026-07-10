@@ -9,9 +9,14 @@
  * Supported env vars (checked in order):
  *   1. BACKEND_URL          — server-side only, recommended for Vercel
  *   2. NEXT_PUBLIC_API_URL  — works but exposed to client bundle
+ *
+ * Timeout: 25s AbortController to stay within Vercel's serverless limit.
  */
 
 import { NextRequest, NextResponse } from "next/server";
+
+/** Maximum time (ms) to wait for the Railway backend before aborting. */
+const PROXY_TIMEOUT_MS = 25_000;
 
 function getBackendUrl(): string {
   // Read inside the function, NOT at module scope.
@@ -100,6 +105,14 @@ async function proxyToBackend(
     }
   });
 
+  console.log(
+    `[API Proxy] ${req.method} /api/${pathStr} → ${targetUrl}`
+  );
+
+  // AbortController for timeout protection
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), PROXY_TIMEOUT_MS);
+
   try {
     // Read body for non-GET/HEAD requests
     let body: ArrayBuffer | undefined;
@@ -115,7 +128,14 @@ async function proxyToBackend(
       method: req.method,
       headers: forwardHeaders,
       body,
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
+
+    console.log(
+      `[API Proxy] ${req.method} /api/${pathStr} ← ${upstream.status} ${upstream.statusText}`
+    );
 
     const responseBody = await upstream.arrayBuffer();
     const responseHeaders = new Headers();
@@ -132,16 +152,47 @@ async function proxyToBackend(
       statusText: upstream.statusText,
       headers: responseHeaders,
     });
-  } catch (err) {
+  } catch (err: unknown) {
+    clearTimeout(timeoutId);
+
+    // Distinguish timeout from connection errors for better debugging
+    const isAbort =
+      err instanceof DOMException && err.name === "AbortError";
+    const errMsg =
+      err instanceof Error ? err.message : String(err);
+
+    if (isAbort) {
+      console.error(
+        `[API Proxy] TIMEOUT after ${PROXY_TIMEOUT_MS}ms reaching ${targetUrl}`
+      );
+      return NextResponse.json(
+        {
+          error: `The backend at ${base} did not respond within ${PROXY_TIMEOUT_MS / 1000}s. The Railway service may be cold-starting or overloaded — please retry in a few seconds.`,
+        },
+        { status: 504 }
+      );
+    }
+
     console.error(
       `[API Proxy] Failed to reach Railway backend at ${targetUrl}:`,
-      err
+      errMsg
     );
-    return NextResponse.json(
-      {
-        error: `Unable to reach the Railway backend at ${base}. Verify the service is running.`,
-      },
-      { status: 502 }
-    );
+
+    // Provide actionable error messages
+    const isConnectionRefused =
+      errMsg.includes("ECONNREFUSED") || errMsg.includes("connect");
+    const isDns =
+      errMsg.includes("ENOTFOUND") || errMsg.includes("getaddrinfo");
+
+    let userMessage: string;
+    if (isDns) {
+      userMessage = `DNS resolution failed for ${base}. The Railway service URL may be incorrect — verify BACKEND_URL in Vercel env vars.`;
+    } else if (isConnectionRefused) {
+      userMessage = `Connection refused by ${base}. The Railway service may not be running — check Railway Dashboard.`;
+    } else {
+      userMessage = `Unable to reach the Railway backend at ${base}. Verify the service is running and the URL is correct.`;
+    }
+
+    return NextResponse.json({ error: userMessage }, { status: 502 });
   }
 }

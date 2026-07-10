@@ -28,8 +28,8 @@ logger = logging.getLogger("response_generator")
 
 # Free-tier safety thresholds for Groq llama-3.3-70b-versatile
 MAX_CONTEXT_CHARACTERS = 4000  # ~1,000 tokens max for retrieved chunks (protects 12K TPM limit)
-MAX_RETRIES = 3                # Exponential backoff retry attempts (protects 30 RPM limit)
-INITIAL_RETRY_DELAY = 2.0      # Seconds to wait before first retry
+MAX_RETRIES = 2                # Reduced from 3 to keep worst-case under Vercel's timeout budget
+INITIAL_RETRY_DELAY = 1.0      # Reduced from 2.0s — worst-case total: 1s + 2s = 3s
 
 
 def build_prompt_context(chunks: List[Dict[str, Any]], max_chars: int = MAX_CONTEXT_CHARACTERS) -> str:
