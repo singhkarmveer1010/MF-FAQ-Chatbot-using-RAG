@@ -32,4 +32,5 @@ if __name__ == "__main__":
     print(f"💻 Web UI:      Open src/ui/index.html in your web browser")
     print("=" * 70)
     
-    uvicorn.run("src.api.main:app", host=host, port=port, reload=True)
+    is_dev = os.getenv("ENVIRONMENT", "development").lower() != "production"
+    uvicorn.run("src.api.main:app", host=host, port=port, reload=is_dev)

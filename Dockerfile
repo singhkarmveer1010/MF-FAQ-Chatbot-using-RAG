@@ -20,12 +20,12 @@ COPY . .
 RUN mkdir -p data/raw data/processed vectorstore
 
 # -----------------------------------------------------------------
-# Pre-download BGE embedding model into the image at build time.
-# This eliminates the cold-start download delay that causes Railway
-# healthchecks to time out on first deployment.
+# Pre-download BGE embedding model AND pre-index all processed chunks
+# into ChromaDB vectorstore at build time.
+# This ensures zero cold-start delay on Railway deployment.
 # -----------------------------------------------------------------
 ENV SENTENCE_TRANSFORMERS_HOME=/app/models
-RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-small-en-v1.5')"
+RUN python -c "from src.ingestion.embedder import index_all_processed_chunks; index_all_processed_chunks()"
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \

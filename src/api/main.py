@@ -31,13 +31,27 @@ logger = logging.getLogger("api_main")
 
 
 def _prewarm_model():
-    """Background thread: load BGE model into cache so the first query is instant."""
+    """Background thread: load BGE model and ensure ChromaDB collection is indexed."""
     try:
         logger.info("🔥 [Prewarm] Loading BGE embedding model in background thread...")
         get_embedding_model()
         logger.info("✅ [Prewarm] Embedding model loaded and cached successfully.")
+        
+        # Verify vector store collection exists and has chunks
+        from src.ingestion.embedder import get_vector_store_client, DEFAULT_COLLECTION_NAME, index_all_processed_chunks
+        client = get_vector_store_client()
+        try:
+            col = client.get_collection(DEFAULT_COLLECTION_NAME)
+            count = col.count()
+            logger.info(f"📊 [Prewarm] Found existing collection '{DEFAULT_COLLECTION_NAME}' with {count} chunks.")
+            if count == 0:
+                raise ValueError("Collection empty")
+        except Exception:
+            logger.warning("⚠️ [Prewarm] Vector store collection missing or empty. Auto-indexing now...")
+            index_all_processed_chunks()
+            logger.info("✅ [Prewarm] Auto-indexing complete!")
     except Exception as e:
-        logger.error(f"❌ [Prewarm] Failed to pre-warm embedding model: {e}")
+        logger.error(f"❌ [Prewarm] Failed during prewarm/auto-index: {e}")
 
 
 @asynccontextmanager
