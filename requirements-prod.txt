@@ -1,0 +1,12 @@
+# Minimal runtime dependencies for the Railway FastAPI service.
+#
+# The default deployed API uses checked-in processed chunks for retrieval and
+# falls back to extractive answers when Groq/LangChain is unavailable. Heavy
+# optional RAG/ingestion dependencies remain in requirements.txt for local
+# indexing, scraping, and full vector retrieval workflows.
+
+fastapi>=0.100.0
+uvicorn[standard]
+python-dotenv
+pydantic>=2.0
+apscheduler>=3.10.0

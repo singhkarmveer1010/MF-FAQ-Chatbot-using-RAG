@@ -15,8 +15,6 @@ tests/
 test_api.py
 pytest.ini
 stitch_hdfc_fund_facts_ui/
-# NOTE: vectorstore/ is intentionally NOT excluded here — the pre-built
-# ChromaDB data is bundled into the Docker image so the API works immediately
-# after deploy on Railway (which has ephemeral filesystem storage).
+vectorstore/
 *.md
 !README.md

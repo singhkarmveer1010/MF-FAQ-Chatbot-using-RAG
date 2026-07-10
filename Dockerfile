@@ -8,10 +8,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python requirements
-COPY requirements.txt .
+# Install minimal production requirements. Full local/ingestion dependencies
+# remain in requirements.txt but are intentionally not installed in the Railway
+# web image to avoid heavy cold starts and memory pressure.
+COPY requirements-prod.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements-prod.txt
 
 # Copy project source code
 COPY . .
